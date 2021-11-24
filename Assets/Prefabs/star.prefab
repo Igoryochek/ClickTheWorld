@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8767816506307754360}
   - component: {fileID: 3264574725311971739}
   - component: {fileID: -5006712086342681277}
+  - component: {fileID: -5534530207923213319}
   m_Layer: 0
   m_Name: star
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 3e1e9e37151d4c2469c831f788f417e8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -134,7 +135,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be8fd1e1f22168f4cad8445e00676664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: 
+  _name: "\u041C\u043E\u0440\u0441\u043A\u0430\u044F \u0417\u0432\u0435\u0437\u0434\u0430"
   _coins: 15
-  _prefab: {fileID: 3691821427417121150}
+  _icon: {fileID: 21300000, guid: 3e1e9e37151d4c2469c831f788f417e8, type: 3}
+  _price: 4000
   _nextPrefab: {fileID: 5465183342639903429, guid: 2de72693391b5f4499a7c02ba1843450, type: 3}
+  _unitLevel: 1
+  _timeBetweenChangePosition: 5
+  _randomMoveSpeed: 1
+--- !u!95 &-5534530207923213319
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3691821427417121150}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f11885b9a4fc22a41aece11eaf76b873, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

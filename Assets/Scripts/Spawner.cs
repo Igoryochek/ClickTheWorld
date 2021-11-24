@@ -3,25 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private GameObject _prefab;
-    [SerializeField] private Vector2 _xBorders;
+    [SerializeField] private GameObject _bubblePrefab;
+    [SerializeField] private Vector2 _xBordersArea1;
+    [SerializeField] private Vector2 _xBordersArea2;
     [SerializeField] private Vector2 _yBorders;
     [SerializeField] private int _timeBetweenSpawn;
     [SerializeField] private int _maxBubbleCount;
     [SerializeField] private List <GameObject> _coins;
     [SerializeField] private CoinsViewer _coinsViewer;
 
-    private Coroutine _coroutine;
+    private Coroutine _bubbleCoroutine;
     private Coroutine _coinCoroutine;
     private List<GameObject> _units=new List<GameObject>();
     private List<GameObject> _bubbles=new List<GameObject>();
     private List<GameObject> _coinsList=new List<GameObject>();
     private int _coinLifetime=2;
+    private Vector2 _randomPosition;
 
     private GameObject _bubble;
+
+    public Vector2 XBordersArea1=>_xBordersArea1;
+    public Vector2 XBordersArea2=>_xBordersArea2;
+    public Vector2 YBorders=>_yBorders;
 
     private void Start()
     {
@@ -30,7 +37,7 @@ public class Spawner : MonoBehaviour
 
     private void Update()
     {
-        if (_coroutine==null)
+        if (_bubbleCoroutine==null)
         {
             foreach (var bubble in _bubbles)
             {
@@ -42,24 +49,38 @@ public class Spawner : MonoBehaviour
             }
             if (_bubbles.Count!=_maxBubbleCount)
             {
-                _coroutine = StartCoroutine(InstantiateUnit());
+                _bubbleCoroutine = StartCoroutine(InstantiateBubble());
             }
         }
     }
 
-    private IEnumerator InstantiateUnit()
+    private IEnumerator InstantiateBubble()
     {
         
         while (_units.Count!=_maxBubbleCount)
         {
-            float randomX = Random.Range(_xBorders.x, _xBorders.y);
-            float randomY = Random.Range(_yBorders.x, _yBorders.y);
-            Vector2 randomPosition = new Vector2(randomX, randomY);
-             _bubble=Instantiate(_prefab,randomPosition,Quaternion.identity);
-            _units.Add(_bubble);
+            InstantiateUnit(_bubblePrefab);
             yield return new WaitForSeconds(_timeBetweenSpawn);
         }
-        _coroutine = null;
+        _bubbleCoroutine = null;
+    }
+
+    public void InstantiateUnit(GameObject prefab)
+    {
+        
+        float randomXArea1 = Random.Range(_xBordersArea1.x, _xBordersArea1.y);
+        float randomXArea2 = Random.Range(_xBordersArea2.x, _xBordersArea2.y);
+        float randomY = Random.Range(_yBorders.x, _yBorders.y);
+        if (prefab.GetComponent<Unit>().Unitlevel == 1)
+        {
+            _randomPosition = new Vector2(randomXArea1, randomY);
+        }
+        if (prefab.GetComponent<Unit>().Unitlevel == 2)
+        {
+            _randomPosition = new Vector2(randomXArea2, randomY);
+        }
+        var unit = Instantiate(prefab, _randomPosition, Quaternion.identity);
+        _units.Add(unit);
     }
 
     public void AddUnit(GameObject unit)

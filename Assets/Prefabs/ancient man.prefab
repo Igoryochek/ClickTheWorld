@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -3469931871843257921}
   - component: {fileID: 3840183445902184601}
   - component: {fileID: 7103045133073519242}
+  - component: {fileID: -8027570578309393092}
   m_Layer: 0
   m_Name: ancient man
   m_TagString: Untagged
@@ -97,10 +98,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daced77aa4e57bd45bcca8eebbd85434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: 
+  _name: "\u041F\u0435\u0440\u0432\u043E\u0431\u044B\u0442\u043D\u044B\u0439 \u0427\u0435\u043B\u043E\u0432\u0435\u043A"
   _coins: 300
-  _prefab: {fileID: 5324806890393696429}
+  _icon: {fileID: 21300000, guid: f8ff96e3bfa9adb4aa3971f4f5fbd75f, type: 3}
+  _price: 40000
   _nextPrefab: {fileID: 3657179174208980683, guid: fa958d22878121d4caf26cb3134f7286, type: 3}
+  _unitLevel: 2
+  _timeBetweenChangePosition: 5
+  _randomMoveSpeed: 1
 --- !u!58 &3840183445902184601
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -138,3 +143,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &-8027570578309393092
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5324806890393696429}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f11885b9a4fc22a41aece11eaf76b873, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

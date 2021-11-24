@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 82cce4459fff5b74ebdf188db3d04ca6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -136,10 +136,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf76dfeb76d96d4989caf04e861ee5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: 
+  _name: "\u041B\u044F\u0433\u0443\u0448\u043A\u0430"
   _coins: 40
-  _prefab: {fileID: 6929906090046963340}
+  _icon: {fileID: 21300000, guid: 82cce4459fff5b74ebdf188db3d04ca6, type: 3}
+  _price: 10000
   _nextPrefab: {fileID: 8788965725709063778, guid: 99f7ca3d66c280d4cbf012cf3518122a, type: 3}
+  _unitLevel: 2
+  _timeBetweenChangePosition: 3
 --- !u!95 &4361207232762677469
 Animator:
   serializedVersion: 3

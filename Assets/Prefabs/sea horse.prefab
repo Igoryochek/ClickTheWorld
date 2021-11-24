@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5465183342639903434}
   - component: {fileID: 8744659532232673802}
   - component: {fileID: 7134413004641379319}
+  - component: {fileID: 6462735874743932097}
   m_Layer: 0
   m_Name: sea horse
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: c40f1e4a2a9d944498bd8bc2ac3efdf6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -134,7 +135,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4f44a60722573949b410be663cdeaf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: 
+  _name: "\u041C\u043E\u0440\u0441\u043A\u043E\u0439 \u043A\u043E\u043D\u0451\u043A"
   _coins: 20
-  _prefab: {fileID: 5465183342639903429}
+  _icon: {fileID: 21300000, guid: c40f1e4a2a9d944498bd8bc2ac3efdf6, type: 3}
+  _price: 5000
   _nextPrefab: {fileID: 2713146179453628115, guid: 6c33c418e3af4274894f6429e7aada92, type: 3}
+  _unitLevel: 1
+  _timeBetweenChangePosition: 5
+  _randomMoveSpeed: 1
+--- !u!95 &6462735874743932097
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5465183342639903429}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f11885b9a4fc22a41aece11eaf76b873, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

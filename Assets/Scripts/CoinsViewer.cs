@@ -9,6 +9,8 @@ public class CoinsViewer : MonoBehaviour
 
     private int _coinsCount=0;
 
+    public int CoinsCount => _coinsCount;
+
     public void ChangeCoinCount(int count)
     {
         _coinsCount += count;

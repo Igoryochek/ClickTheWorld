@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2530601137491630629}
   - component: {fileID: 7892270930605318290}
   - component: {fileID: -4427141766026002299}
+  - component: {fileID: 6871633578307158359}
   m_Layer: 0
   m_Name: fish
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: e18657c48b143c945a3c31e8a11c4386, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -134,7 +135,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc52304b0dcdae74a8c2a45403820586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: 
+  _name: "\u0420\u044B\u0431\u0430"
   _coins: 30
-  _prefab: {fileID: 2713146179453628115}
+  _icon: {fileID: 21300000, guid: e18657c48b143c945a3c31e8a11c4386, type: 3}
+  _price: 6000
   _nextPrefab: {fileID: 6929906090046963340, guid: 92560e3b86e2e1c4b9da2301d1d9a025, type: 3}
+  _unitLevel: 1
+  _timeBetweenChangePosition: 5
+  _randomMoveSpeed: 1
+--- !u!95 &6871633578307158359
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2713146179453628115}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f11885b9a4fc22a41aece11eaf76b873, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

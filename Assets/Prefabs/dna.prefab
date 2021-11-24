@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2554318337953640684}
   - component: {fileID: 7458498276749521849}
   - component: {fileID: 8735886998528868179}
+  - component: {fileID: 49473088636687435}
   m_Layer: 0
   m_Name: dna
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: ba809277a5b16d844817be54d5c59900, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -134,7 +135,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9576021a96d43f443a6ea9fd6c9e4042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: DNA
+  _name: "\u0414\u041D\u041A"
   _coins: 1
-  _prefab: {fileID: 1891602066565697093}
+  _icon: {fileID: 21300000, guid: ba809277a5b16d844817be54d5c59900, type: 3}
+  _price: 1000
   _nextPrefab: {fileID: 1155267477200324034, guid: 18beb5c2d58005c4792c4c4672d64473, type: 3}
+  _unitLevel: 1
+  _timeBetweenChangePosition: 5
+  _randomMoveSpeed: 1
+--- !u!95 &49473088636687435
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891602066565697093}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f11885b9a4fc22a41aece11eaf76b873, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

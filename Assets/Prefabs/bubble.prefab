@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 953b14847b82acd468baec43692597d4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -136,5 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: 
   _coins: 0
-  _prefab: {fileID: 8788965725709063778}
+  _icon: {fileID: 21300000, guid: 953b14847b82acd468baec43692597d4, type: 3}
+  _price: 0
   _nextPrefab: {fileID: 1891602066565697093, guid: 3136ae2662684c84c9c04b3d570255a7, type: 3}
+  _unitLevel: 1
