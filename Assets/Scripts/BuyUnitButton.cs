@@ -8,7 +8,7 @@ public class BuyUnitButton : MonoBehaviour
     {
         if (unit.Price<=FindObjectOfType<CoinsViewer>().CoinsCount)
         {
-            FindObjectOfType<Spawner>().InstantiateUnit(unit.gameObject);
+            FindObjectOfType<UnitSpawner>().InstantiateRandomUnit(unit.gameObject);
             FindObjectOfType<CoinsViewer>().ChangeCoinCount(-unit.Price);
         }
     }

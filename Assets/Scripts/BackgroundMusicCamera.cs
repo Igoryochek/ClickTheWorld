@@ -7,9 +7,6 @@ public class BackgroundMusicCamera : MonoBehaviour
     [SerializeField] private List<AudioClip> _clips;
     [SerializeField] private AudioSource _audio;
 
-
-    private int _currentIndex=0;
-
     private void Start()
     {
         StartCoroutine(OnStartGame());
@@ -19,13 +16,13 @@ public class BackgroundMusicCamera : MonoBehaviour
     {
         while (true)
         {
-            if (_audio.isPlaying!=false)
+            if (_audio.isPlaying==false)
             {
-                _audio.clip = _clips[_currentIndex];
+                int randomIndex = Random.Range(0, _clips.Count);
+                _audio.clip = _clips[randomIndex];
                 _audio.Play();
-                _currentIndex++;
             }
-
+            yield return null;
         }
     }
 }

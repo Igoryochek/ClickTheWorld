@@ -14,6 +14,21 @@ public class CoinsViewer : MonoBehaviour
     public void ChangeCoinCount(int count)
     {
         _coinsCount += count;
-        _coinsCountText.text = _coinsCount.ToString();
+        if (_coinsCount/1000>0)
+        {
+            if (_coinsCount / 1000000 > 0)
+            {
+                float megaCount =(float) _coinsCount / 1000000;
+                _coinsCountText.text = megaCount.ToString() + "M";
+            }
+            float kiloCount =(float) _coinsCount / 1000;
+            _coinsCountText.text = kiloCount.ToString()+"K";
+
+        }
+        else
+        {
+            _coinsCountText.text = _coinsCount.ToString();
+
+        }
     }
 }

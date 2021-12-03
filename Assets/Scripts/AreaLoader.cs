@@ -4,19 +4,26 @@ using UnityEngine;
 
 public class AreaLoader : MonoBehaviour
 {
-    [SerializeField] private Vector3 _firstAreaCameraPosition;
-    [SerializeField] private Vector3 _secondAreaCameraPosition;
-    //[SerializeField] private Vector3 _thirdAreaCameraPosition;
+    [SerializeField] private Area[] _areas;
+    [SerializeField] private GameObject _gameButtons;
+
     public void LoadArea(int areaNumber)
     {
-        switch (areaNumber)
+        if (_gameButtons.activeSelf==false)
         {
-            case 1:
-                Camera.main.transform.position = _firstAreaCameraPosition;
-                break;
-            case 2:
-                Camera.main.transform.position = _secondAreaCameraPosition;
-                break;
+            _gameButtons.SetActive(true);
         }
+
+        foreach (var area in _areas)
+        {
+            if (area.AreaNumber==areaNumber)
+            {
+                Camera.main.transform.position = new Vector3(area.transform.position.x,area.transform.position.y,-10);
+            }
+        }
+
+        
+
+        FindObjectOfType<AreasButton>().OnChoosingArea();
     }
 }

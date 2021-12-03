@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 7733743038041313951}
   - component: {fileID: 6150407620836936352}
   - component: {fileID: 3789317252372515495}
-  - component: {fileID: 6070642953995476552}
   - component: {fileID: 4361207232762677469}
   - component: {fileID: 6210850299978140413}
+  - component: {fileID: 7711425907977777635}
+  - component: {fileID: -4286411665599180857}
   m_Layer: 0
   m_Name: frog1level
   m_TagString: Untagged
@@ -124,25 +125,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.38
---- !u!114 &6070642953995476552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6929906090046963340}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cf76dfeb76d96d4989caf04e861ee5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _name: "\u041B\u044F\u0433\u0443\u0448\u043A\u0430"
-  _coins: 40
-  _icon: {fileID: 21300000, guid: 82cce4459fff5b74ebdf188db3d04ca6, type: 3}
-  _price: 10000
-  _nextPrefab: {fileID: 8788965725709063778, guid: 99f7ca3d66c280d4cbf012cf3518122a, type: 3}
-  _unitLevel: 2
-  _timeBetweenChangePosition: 3
 --- !u!95 &4361207232762677469
 Animator:
   serializedVersion: 3
@@ -179,3 +161,121 @@ MonoBehaviour:
   _prefab: {fileID: 2483245923953868296, guid: bd0c9d50088b792429fc2f80988a6de1, type: 3}
   _xBorders: {x: 8, y: 12}
   _yBorders: {x: -4, y: 3}
+--- !u!82 &7711425907977777635
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6929906090046963340}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ca02fb945abef13458c9154d6041861a, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.21
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &-4286411665599180857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6929906090046963340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae28bbe6633404f4392b530fdf8f7dcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: "\u043B\u044F\u0433\u0443\u0448\u043A\u0430"
+  _unitNumber: 7
+  _coins: 50
+  _icon: {fileID: 21300000, guid: 82cce4459fff5b74ebdf188db3d04ca6, type: 3}
+  _price: 10000
+  _nextPrefab: {fileID: 8925119231405316034, guid: 6f1784f2bff67934b97cd5d52a1a1c67, type: 3}
+  _unitLevel: 2
+  _timeBetweenChangePosition: 5
+  _randomMoveSpeed: 2
+  _sound: {fileID: 8300000, guid: ca02fb945abef13458c9154d6041861a, type: 3}

@@ -23,10 +23,12 @@ public class LastUnitOnlevel : MonoBehaviour
     private IEnumerator RemoveFromLevel()
     {
         _animator.SetBool("RemoveFromLevel", true);
+        float randomPositionX = Random.Range(_xBorders.x, _xBorders.y);
+        float randomPositionY = Random.Range(_yBorders.x, _yBorders.y);
+        Vector2 newPosition = new Vector2(randomPositionX, randomPositionY);
+        transform.Translate(newPosition * Time.deltaTime*0.2f);
         yield return new WaitForSeconds(_timeBeforeRemove);
-        float randomPositionX = Random.Range(_xBorders.x,_xBorders.y);
-        float randomPositionY = Random.Range(_yBorders.x,_yBorders.y);
-        Vector2 newPosition = new Vector2(randomPositionX,randomPositionY);
+        
         Instantiate(_prefab,newPosition,Quaternion.identity);
         Destroy(gameObject);
     }
