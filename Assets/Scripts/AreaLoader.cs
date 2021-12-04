@@ -24,6 +24,5 @@ public class AreaLoader : MonoBehaviour
 
         
 
-        FindObjectOfType<AreasButton>().OnChoosingArea();
     }
 }

@@ -14,9 +14,9 @@ public class Unit : MonoBehaviour,IPointerDownHandler,IDragHandler,IPointerUpHan
     [SerializeField] private GameObject _nextPrefab;
     [SerializeField] private int _unitLevel;
     [SerializeField] private float _timeBetweenChangePosition;
-    [SerializeField] private float _randomMoveSpeed=2;
     [SerializeField] private AudioClip _sound;
 
+    private float _randomMoveSpeed;
     private int _coins=10;
     [SerializeField]private int _price=1000;
     private int _timeBeforeCoinSpawn=5;
@@ -29,6 +29,7 @@ public class Unit : MonoBehaviour,IPointerDownHandler,IDragHandler,IPointerUpHan
     private AudioSource _audio;
     private bool _isUnitPressed=false;
     private bool _isDrugging=false;
+    private bool _hasCollided = false;
 
 
     public int Price => _price;
@@ -45,8 +46,8 @@ public class Unit : MonoBehaviour,IPointerDownHandler,IDragHandler,IPointerUpHan
         if (TryGetComponent(out BubbleUnit bubble)==false)
         {
             StartCoroutine(CreateConstantCoins());
-            StartCoroutine(ChangePositionRandomly());
         }
+        StartCoroutine(ChangePositionRandomly());
 
         _spawner = FindObjectOfType<UnitSpawner>();
         _animator = GetComponent<Animator>();
@@ -100,7 +101,7 @@ public class Unit : MonoBehaviour,IPointerDownHandler,IDragHandler,IPointerUpHan
     private IEnumerator ChangePositionRandomly()
     {
         _randomPosition.x = transform.position.x;
-
+        _randomMoveSpeed = Random.Range(0.3f,1.5f);
         while (true)
         {
 
@@ -177,8 +178,10 @@ public class Unit : MonoBehaviour,IPointerDownHandler,IDragHandler,IPointerUpHan
     {
         if (collision.TryGetComponent(out Unit unit) && _isDrugging == true)
         {
-            if (unit.UnitNumber==_unitNumber)
+
+            if (unit.UnitNumber==_unitNumber&&_hasCollided==false)
             {
+                _hasCollided = true;
                 OnChangePrefab(collision.gameObject);
             }
         }
@@ -188,8 +191,9 @@ public class Unit : MonoBehaviour,IPointerDownHandler,IDragHandler,IPointerUpHan
     {
         if (collision.TryGetComponent(out Unit unit) &&( _isDrugging == true||_isUnitPressed==true))
         {
-            if (unit.UnitNumber == _unitNumber)
+            if (unit.UnitNumber == _unitNumber && _hasCollided == false)
             {
+                _hasCollided = true;
                 OnChangePrefab(collision.gameObject);
             }
         }

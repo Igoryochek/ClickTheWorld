@@ -19,7 +19,7 @@ public class UnitViewer : MonoBehaviour
         _unit = unit;
         _unitNumber = unit.UnitNumber;
         _icon.sprite =unit.Icon;
-        _text.text = unit.Name + " . Стоимость: " + unit.Price.ToString();
+        _text.text = unit.Name + ". Стоимость: " + unit.Price.ToString();
         if (unit.Price / 1000 > 0)
         {
             if (unit.Price / 1000000 > 0)
