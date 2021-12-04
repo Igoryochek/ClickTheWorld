@@ -9,12 +9,15 @@ public class UnitViewer : MonoBehaviour
     [SerializeField] private Image _icon;
     [SerializeField] private TextMeshProUGUI _text;
 
-    private int _unitViewernumber;
+    private Unit _unit;
+    private int _unitNumber;
 
-    public int UnitViewernumber => _unitViewernumber;
+    public int UnitViewernumber => _unitNumber;
+    public Unit Unit => _unit;
     public void RenderContentUnit(Unit unit)
     {
-        _unitViewernumber = unit.UnitNumber;
+        _unit = unit;
+        _unitNumber = unit.UnitNumber;
         _icon.sprite =unit.Icon;
         _text.text = unit.Name + " . Стоимость: " + unit.Price.ToString();
         if (unit.Price / 1000 > 0)
@@ -42,6 +45,15 @@ public class UnitViewer : MonoBehaviour
         {
             _text.text = unit.Name + " . Стоимость: " + unit.Price.ToString();
 
+        }
+    }
+
+    public void OnBuyButtonClick()
+    {
+        if (_unit.Price <= FindObjectOfType<CoinsViewer>().CoinsCount)
+        {
+            FindObjectOfType<UnitSpawner>().InstantiateRandomUnit(_unit.gameObject);
+            FindObjectOfType<CoinsViewer>().ChangeCoinCount(-_unit.Price);
         }
     }
 }

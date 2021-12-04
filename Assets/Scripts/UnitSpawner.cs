@@ -66,7 +66,7 @@ public class UnitSpawner : MonoBehaviour
        
             if (TryGetObject(out GameObject unitViewer))
             {
-                if (unitViewer.GetComponent<UnitViewer>().UnitViewernumber == prefab.GetComponent<Unit>().UnitNumber&&unitViewer.activeSelf==false)
+                if (unitViewer.GetComponent<UnitViewer>().UnitViewernumber== prefab.GetComponent<Unit>().UnitNumber&&unitViewer.activeSelf==false)
                 {
                     unitViewer.SetActive(true);
                 }
