@@ -5,31 +5,50 @@ using UnityEngine;
 public class LastUnitOnlevel : MonoBehaviour
 {
     [SerializeField] private float _timeBeforeRemove;
+    [SerializeField] private float _speed;
     [SerializeField] private Animator _animator;
-    [SerializeField] private GameObject _prefab;
-    [SerializeField] private Vector2 _xBorders;
-    [SerializeField] private Vector2 _yBorders;
+    [SerializeField] private Unit _prefab;
 
     private Coroutine _coroutine;
+    private Vector3 _newPosition;
+    private CrystalUnit _crystal;
+    private UnitSpawner _unitSpawner;
+
+    private void Start()
+    {
+        _crystal = FindObjectOfType<CrystalUnit>();
+        _unitSpawner = FindObjectOfType<UnitSpawner>();
+    }
 
     private void Update()
     {
-        if (_coroutine==null)
+        if (_coroutine == null)
         {
-            StartCoroutine(RemoveFromLevel());
+            _coroutine = StartCoroutine(RemoveFromLevel());
         }
     }
 
     private IEnumerator RemoveFromLevel()
     {
         _animator.SetBool("RemoveFromLevel", true);
-        float randomPositionX = Random.Range(_xBorders.x, _xBorders.y);
-        float randomPositionY = Random.Range(_yBorders.x, _yBorders.y);
-        Vector2 newPosition = new Vector2(randomPositionX, randomPositionY);
-        transform.Translate(newPosition * Time.deltaTime*0.2f);
-        yield return new WaitForSeconds(_timeBeforeRemove);
-        
-        Instantiate(_prefab,newPosition,Quaternion.identity);
+        float newPositionX = transform.position.x + 10;
+        _newPosition = new Vector3(newPositionX, transform.position.y, transform.position.z);
+        float xBorder = transform.position.x + 8;
+        while (transform.position != _newPosition && transform.position.x < xBorder)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, _newPosition, Time.deltaTime * _speed);
+            yield return null;
+        }
+
+        Unit unit = GetComponent<Unit>();
+        if (_crystal != null && unit.UnitNumber == _crystal.UnitNumber)
+        {
+            _crystal.ChangeCrystalCountText();
+        }
+        else
+        {
+            _unitSpawner.InitializeUnit(_prefab, true, gameObject.transform.position);
+        }
         Destroy(gameObject);
     }
 }

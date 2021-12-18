@@ -8,52 +8,59 @@ public class UnitViewer : MonoBehaviour
 {
     [SerializeField] private Image _icon;
     [SerializeField] private TextMeshProUGUI _text;
+    [SerializeField] private CoinsViewer _coinsViewer;
+    [SerializeField] private Unit _unitPrefab;
+    [SerializeField] private UnitSpawner _unitSpawner;
 
-    private Unit _unit;
     private int _unitNumber;
 
-    public int UnitViewernumber => _unitNumber;
-    public Unit Unit => _unit;
-    public void RenderContentUnit(Unit unit)
+    public int UnitNumber => _unitNumber;
+
+    private void Awake()
     {
-        _unit = unit;
-        _unitNumber = unit.UnitNumber;
-        _icon.sprite =unit.Icon;
-        _text.text = unit.Name + ". Стоимость: " + unit.Price.ToString();
-        if (unit.Price / 1000 > 0)
+        _unitNumber = _unitPrefab.UnitNumber;
+        RenderContentUnit();
+    }
+
+    public void RenderContentUnit()
+    {
+        long count = _unitPrefab.Price;
+        long kiloCount = count / 1000;
+        long lostKiloCount = count % 1000 / 100;
+        long megaCount = count / 1000000;
+        long lostMegaCount = count % 1000000 / 100000;
+        long teraCount = count / 1000000000;
+        long lostTeraCount = count % 1000000000 / 100000000;
+        if (_unitPrefab.Price / 1000 > 0)
         {
-            if (unit.Price / 1000000 > 0)
+            if (count / 1000000 > 0)
             {
-                if (unit.Price / 1000000000 > 0)
+                if (count / 1000000000 > 0)
                 {
-                    float teraCount = (float)unit.Price / 1000000;
-                    _text.text = unit.Name + " . Стоимость: " + teraCount.ToString() + "T";
+                    _text.text = _unitPrefab.Name + " . Стоимость: " + teraCount.ToString() + "." + lostTeraCount + "T";
                 }
                 else
                 {
-                    float megaCount = (float)unit.Price / 1000000;
-                    _text.text = unit.Name + " . Стоимость: " + megaCount.ToString() + "M";
+                    _text.text = _unitPrefab.Name + " . Стоимость: " + megaCount.ToString() + "." + lostMegaCount + "M";
                 }
             }
             else
             {
-                float kiloCount = (float)unit.Price / 1000;
-                _text.text = unit.Name + " . Стоимость: " + kiloCount.ToString() + "K";
+                _text.text = _unitPrefab.Name + " . Стоимость: " + kiloCount.ToString() + "." + lostKiloCount + "K";
             }
         }
         else
         {
-            _text.text = unit.Name + " . Стоимость: " + unit.Price.ToString();
-
+            _text.text = _unitPrefab.Name + " . Стоимость: " + count.ToString();
         }
     }
 
-    public void OnBuyButtonClick()
+    public void BuyButtonClick()
     {
-        if (_unit.Price <= FindObjectOfType<CoinsViewer>().CoinsCount)
+        if (_coinsViewer.CoinsCount > _unitPrefab.Price)
         {
-            FindObjectOfType<UnitSpawner>().InstantiateRandomUnit(_unit.gameObject);
-            FindObjectOfType<CoinsViewer>().ChangeCoinCount(-_unit.Price);
+            _unitSpawner.InitializeUnit(_unitPrefab, true, gameObject.transform.position);
+            _coinsViewer.ChangeCoinCount(-_unitPrefab.Price);
         }
     }
 }

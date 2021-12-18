@@ -6,64 +6,87 @@ using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(AudioSource))]
-public class Unit : MonoBehaviour,IPointerDownHandler,IDragHandler,IPointerUpHandler
+public class Unit : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
 {
     [SerializeField] private string _name;
     [SerializeField] private int _unitNumber;
     [SerializeField] private Sprite _icon;
-    [SerializeField] private GameObject _nextPrefab;
-    [SerializeField] private int _unitLevel;
+    [SerializeField] private Unit _nextPrefab;
+    [SerializeField] protected int _unitLevel;
     [SerializeField] private float _timeBetweenChangePosition;
     [SerializeField] private AudioClip _sound;
+    [SerializeField] private long _price = 1000;
+    [SerializeField] protected long _coins = 1;
 
     private float _randomMoveSpeed;
-    private int _coins=10;
-    [SerializeField]private int _price=1000;
-    private int _timeBeforeCoinSpawn=5;
-    private GameObject _currentUnit;
+    private int _timeBeforeCoinSpawn = 5;
     private Animator _animator;
-    private UnitSpawner _spawner;
     private Vector2 _randomPosition;
-    private float _changePositionSpeed;
-    private Coroutine _changePrefab;
     private AudioSource _audio;
-    private bool _isUnitPressed=false;
-    private bool _isDrugging=false;
+    private bool _isUnitPressed = false;
+    private bool _isDrugging = false;
+    private bool _isFirstTime = true;
     private bool _hasCollided = false;
+    private bool _isCreated = false;
+    private UnitSpawner _unitSpawner;
+    private CoinSpawner _coinSpawner;
+    protected long _startCoins;
+    private Coroutine _bubbleSpawn;
+    private Coroutine _changePosition;
+    private float _areaPositionOffset = 0;
+    private CoinsViewer _coinsViewer;
 
-
-    public int Price => _price;
+    public long Price => _price;
     public int UnitNumber => _unitNumber;
     public string Name => _name;
     public Sprite Icon => _icon;
     public int Unitlevel => _unitLevel;
+    public bool IsFirstTime => _isFirstTime;
 
-    private void Start()
+
+    private void OnEnable()
     {
-        _coins *= _unitNumber;
-        _price *= _unitNumber * _unitLevel;
-
-        if (TryGetComponent(out BubbleUnit bubble)==false)
+        if (_isCreated == true)
         {
-            StartCoroutine(CreateConstantCoins());
+            if (TryGetComponent(out BubbleUnit bubble) == false)
+            {
+                _bubbleSpawn = StartCoroutine(CreateConstantCoins());
+            }
+            _changePosition = StartCoroutine(ChangePositionRandomly());
         }
-        StartCoroutine(ChangePositionRandomly());
-
-        _spawner = FindObjectOfType<UnitSpawner>();
+        else
+        {
+            _isCreated = true;
+        }
+    }
+    private void OnDisable()
+    {
+        if (_bubbleSpawn != null && _changePosition != null)
+        {
+            StopCoroutine(_bubbleSpawn);
+            StopCoroutine(_changePosition);
+        }
+    }
+    private void Awake()
+    {
+        _unitSpawner = FindObjectOfType<UnitSpawner>();
+        _coinsViewer = FindObjectOfType<CoinsViewer>();
+        _coinSpawner = FindObjectOfType<CoinSpawner>();
         _animator = GetComponent<Animator>();
         _audio = GetComponent<AudioSource>();
+        _startCoins = _coins;
     }
     public void OnPointerDown(PointerEventData eventData)
     {
         _isUnitPressed = true;
         if (TryGetComponent(out BubbleUnit bubble))
         {
-            StartCoroutine(OnBabbleClick(bubble));
+            OnBabbleClick(bubble);
         }
         else
         {
             CreateCoin();
-            FindObjectOfType<CoinsViewer>().ChangeCoinCount(_coins);
+            _coinsViewer.ChangeCoinCount(_coins);
         }
     }
 
@@ -82,54 +105,39 @@ public class Unit : MonoBehaviour,IPointerDownHandler,IDragHandler,IPointerUpHan
 
     private void CreateCoin()
     {
-        FindObjectOfType<CoinSpawner>().ShowCoin(gameObject.transform.position,_coins);
+        _coinSpawner.ShowCoin(gameObject.transform.position, _coins);
     }
 
-    public IEnumerator OnBabbleClick(BubbleUnit bubble)
+    public void OnBabbleClick(BubbleUnit bubble)
     {
-        //GameObject randomUnit = _spawner.RandomUnit(_unitLevel).gameObject;
-        _currentUnit = Instantiate(_nextPrefab, gameObject.transform.position, Quaternion.identity);
-        FindObjectOfType<UnitSpawner>().AddUnit(_currentUnit);
-        FindObjectOfType<UnitSpawner>().RemoveUnit(bubble.gameObject);
-        FindObjectOfType<UnitSpawner>().InstantiateUnitViewer(_nextPrefab);
-
+        _unitSpawner.InitializeUnit(_nextPrefab, false, gameObject.transform.position);
         _audio.PlayOneShot(_sound);
-        yield return new WaitForSeconds(0.1f);
-        Destroy(gameObject);
+        _unitSpawner.RemoveBubble(_nextPrefab._unitLevel, gameObject.transform.position);
+        gameObject.SetActive(false);
     }
 
     private IEnumerator ChangePositionRandomly()
     {
         _randomPosition.x = transform.position.x;
-        _randomMoveSpeed = Random.Range(0.3f,1.5f);
+        _randomMoveSpeed = Random.Range(0.3f, 1.5f);
         while (true)
         {
-
-            if (transform.position.x==_randomPosition.x)
+            if (transform.position.x == _randomPosition.x)
             {
                 yield return new WaitForSeconds(_timeBetweenChangePosition);
-
-                float randomXArea1 = Random.Range(_spawner.XBordersArea1.x, _spawner.XBordersArea1.y);
-                float randomXArea2 = Random.Range(_spawner.XBordersArea2.x, _spawner.XBordersArea2.y);
-                float randomXArea3 = Random.Range(_spawner.XBordersArea3.x, _spawner.XBordersArea3.y);
-                float randomXArea4 = Random.Range(_spawner.XBordersArea4.x, _spawner.XBordersArea4.y);
-                float randomY = Random.Range(_spawner.YBorders.x, _spawner.YBorders.y);
                 if (_unitLevel == 1)
                 {
-                    _randomPosition = new Vector2(randomXArea1, randomY);
+                    _areaPositionOffset = 0;
                 }
-                if (_unitLevel == 2)
+                else
                 {
-                    _randomPosition = new Vector2(randomXArea2, randomY);
+                    _areaPositionOffset += 10 * (_unitLevel - 1);
+
                 }
-                if (_unitLevel == 3)
-                {
-                    _randomPosition = new Vector2(randomXArea3, randomY);
-                }
-                if (_unitLevel == 4)
-                {
-                    _randomPosition = new Vector2(randomXArea4, randomY);
-                }
+                float randomXArea = Random.Range(_unitSpawner.XBordersArea.x, _unitSpawner.XBordersArea.y) + _areaPositionOffset;
+                float randomY = Random.Range(_unitSpawner.YBorders.x, _unitSpawner.YBorders.y);
+                _randomPosition = new Vector2(randomXArea, randomY);
+                _areaPositionOffset = 0;
                 _animator.SetTrigger("IsStarted");
                 yield return new WaitForSeconds(0.7f);
             }
@@ -137,9 +145,7 @@ public class Unit : MonoBehaviour,IPointerDownHandler,IDragHandler,IPointerUpHan
             {
                 yield return new WaitForSeconds(_timeBetweenChangePosition);
             }
-
             transform.position = Vector2.MoveTowards(transform.position, _randomPosition, _randomMoveSpeed * Time.deltaTime);
-
             yield return null;
         }
     }
@@ -149,7 +155,7 @@ public class Unit : MonoBehaviour,IPointerDownHandler,IDragHandler,IPointerUpHan
         while (true)
         {
             CreateCoin();
-            FindObjectOfType<CoinsViewer>().ChangeCoinCount(_coins);
+            _coinsViewer.ChangeCoinCount(_coins);
             yield return new WaitForSeconds(_timeBeforeCoinSpawn);
             yield return null;
         }
@@ -157,29 +163,28 @@ public class Unit : MonoBehaviour,IPointerDownHandler,IDragHandler,IPointerUpHan
 
     protected void OnChangePrefab(GameObject other)
     {
-        
-            ChangePrefab(other);
-       
+        ChangePrefab(other);
     }
 
     private void ChangePrefab(GameObject other)
     {
-  
-        FindObjectOfType<UnitSpawner>().RemoveUnit(gameObject);
-        Destroy(gameObject);
-        FindObjectOfType<UnitSpawner>().RemoveUnit(other);
-        Destroy(other);
-        _currentUnit =Instantiate(_nextPrefab, transform.position, Quaternion.identity);
-        FindObjectOfType<UnitSpawner>().AddUnit(_currentUnit);
-        FindObjectOfType<UnitSpawner>().InstantiateUnitViewer(_nextPrefab);
+        if (_nextPrefab.TryGetComponent(out LastUnitOnlevel lastUnitOnlevel))
+        {
+            _unitSpawner.InstantiateUnit(_nextPrefab, gameObject.transform.position);
+        }
+        else
+        {
+            _unitSpawner.InitializeUnit(_nextPrefab, false, gameObject.transform.position);
+        }
+        gameObject.SetActive(false);
+        other.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent(out Unit unit) && _isDrugging == true)
         {
-
-            if (unit.UnitNumber==_unitNumber&&_hasCollided==false)
+            if (unit.UnitNumber == _unitNumber && _hasCollided == false)
             {
                 _hasCollided = true;
                 OnChangePrefab(collision.gameObject);
@@ -189,7 +194,7 @@ public class Unit : MonoBehaviour,IPointerDownHandler,IDragHandler,IPointerUpHan
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out Unit unit) &&( _isDrugging == true||_isUnitPressed==true))
+        if (collision.TryGetComponent(out Unit unit) && (_isDrugging == true || _isUnitPressed == true))
         {
             if (unit.UnitNumber == _unitNumber && _hasCollided == false)
             {
@@ -197,5 +202,17 @@ public class Unit : MonoBehaviour,IPointerDownHandler,IDragHandler,IPointerUpHan
                 OnChangePrefab(collision.gameObject);
             }
         }
+    }
+
+    public void ResetBools()
+    {
+        _hasCollided = false;
+        _isDrugging = false;
+        _isUnitPressed = false;
+    }
+
+    public void SetNoFirstTime()
+    {
+        _isFirstTime = false;
     }
 }

@@ -2,110 +2,147 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class UnitSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject _bubblePrefab;
-    [SerializeField] private List<GameObject> _prefabs;
-    [SerializeField] private GameObject _dnaPrefab;
-    [SerializeField] private UnitViewer _unitViewer;
+    [SerializeField] private List<Unit> _prefabs;
+    [SerializeField] private Unit _dnaPrefab;
     [SerializeField] private GameObject _unitVierwersContainer;
-    [SerializeField] private int _timeBetweenSpawn;
     [SerializeField] private int _maxBubbleCount;
-    [SerializeField] private Vector2 _xBordersArea1;
-    [SerializeField] private Vector2 _xBordersArea2;
-    [SerializeField] private Vector2 _xBordersArea3;
-    [SerializeField] private Vector2 _xBordersArea4;
+    [SerializeField] private Vector2 _xBordersArea;
     [SerializeField] private Vector2 _yBorders;
+    [SerializeField] private List<GameObject> _areaButtons;
+    [SerializeField] private List<GameObject> _bubbleEffects;
+    [SerializeField] private List<Area> _areas;
+    [SerializeField] private List<ScriptableUnit> _scriptableUnits;
+    [SerializeField] private GameObject _unitsPooler;
+    [SerializeField] private GameObject _bubblesPooler;
+    [SerializeField] private UnitShop _unitShop;
 
-    private List<GameObject> _unitViewers=new List<GameObject>();
-    private Coroutine _bubbleCoroutine;
-    private List<GameObject> _units = new List<GameObject>();
-    private List<GameObject> _bubbles = new List<GameObject>();
-    private Vector2 _randomPosition;
+    private List<Unit> _units = new List<Unit>();
+    private List<Unit> _bubbles = new List<Unit>();
+    private int _sameUnitsCount = 15;
+    private float _areaPositionOffset = 0;
+    private int _bubblesCount;
+    private int _bubbleEffectLifetime = 1;
 
-    public Vector2 XBordersArea1 => _xBordersArea1;
-    public Vector2 XBordersArea2 => _xBordersArea2;
-    public Vector2 XBordersArea3 => _xBordersArea3;
-    public Vector2 XBordersArea4 => _xBordersArea4;
+
+    public Vector2 XBordersArea => _xBordersArea;
+
     public Vector2 YBorders => _yBorders;
-    public int TimeBetweenSpawn => _timeBetweenSpawn;
 
-    private void Start()
-    {
-        foreach (var prefab in _prefabs)
-        {
-            CreateUnitViewer(prefab.GetComponent<Unit>());
-        }
-    }
+    public int BubblesCount => _bubblesCount;
 
-    private void Update()
+
+    public event UnityAction<int> IsUnitCreated;
+
+    private void Awake()
     {
-        if (_bubbleCoroutine == null)
+        for (int i = 0; i < _areas.Count; i++)
         {
-            if (_bubbles.Count != _maxBubbleCount)
+            for (int j = 0; j < _areas[i].MaxBubbleCount + 1; j++)
             {
-                _bubbleCoroutine = StartCoroutine(InstantiateBubble());
+                var bubble = Instantiate(_areas[i].AreasBubblePrefab, _bubblesPooler.transform);
+                _bubbles.Add(bubble);
+                bubble.gameObject.SetActive(false);
+            }
+        }
+        for (int i = 0; i < _scriptableUnits.Count; i++)
+        {
+            for (int j = 0; j < _sameUnitsCount; j++)
+            {
+                var unit = Instantiate(_scriptableUnits[i].Prefab, _unitsPooler.transform);
+                _units.Add(unit);
+                unit.gameObject.SetActive(false);
             }
         }
     }
 
-    private IEnumerator InstantiateBubble()
+    public void InstantiateUnit(Unit unit, Vector3 position)
     {
-
-        while (_bubbles.Count != _maxBubbleCount)
+        Instantiate(unit, position, Quaternion.identity);
+        int areaButtonIndex = unit.Unitlevel - 1;
+        if (_areaButtons[areaButtonIndex].activeSelf == false)
         {
-            InstantiateRandomUnit(_bubblePrefab);
-            yield return new WaitForSeconds(_timeBetweenSpawn);
+            if (_areaButtons[0].activeSelf == false)
+            {
+                _areaButtons[0].SetActive(true);
+            }
+            _areaButtons[areaButtonIndex].SetActive(true);
+            _areas[areaButtonIndex].gameObject.SetActive(true);
         }
-        _bubbleCoroutine = null;
     }
 
-    public void InstantiateUnitViewer(GameObject prefab)
+    public void InitializeUnit(Unit prefab, bool isNeedRandomPosition, Vector3 position)
     {
-       
-            if (TryGetObject(out GameObject unitViewer))
+        List<Unit> units = new List<Unit>();
+        if (prefab.TryGetComponent(out BubbleUnit bubbleUnit))
+        {
+            units = _bubbles;
+        }
+        else
+        {
+            units = _units;
+        }
+
+        if (TryGetObject(out Unit unit, prefab.UnitNumber, prefab.Unitlevel, units))
+        {
+            if (isNeedRandomPosition)
             {
-                if (unitViewer.GetComponent<UnitViewer>().UnitViewernumber== prefab.GetComponent<Unit>().UnitNumber&&unitViewer.activeSelf==false)
+                if (unit.Unitlevel == 1)
                 {
-                    unitViewer.SetActive(true);
+                    _areaPositionOffset = 0;
                 }
+                else
+                {
+                    _areaPositionOffset += 10 * (unit.Unitlevel - 1);
+
+                }
+                float randomXArea = Random.Range(_xBordersArea.x, _xBordersArea.y) + _areaPositionOffset;
+                float randomY = Random.Range(_yBorders.x, _yBorders.y);
+                unit.transform.position = new Vector2(randomXArea, randomY);
+                _areaPositionOffset = 0;
             }
-        
+            else
+            {
+                unit.transform.position = position;
+            }
+            if (TryGetComponent(out BubbleUnit bubble) == false)
+            {
+                if (unit.IsFirstTime == true)
+                {
+                    foreach (var unit2 in _units)
+                    {
+                        if (unit2.UnitNumber == unit.UnitNumber)
+                        {
+                            unit2.SetNoFirstTime();
+                        }
+                    }
+                }
+                _unitShop.InitializeUnitViewer(unit.UnitNumber);
+                unit.ResetBools();
+                IsUnitCreated?.Invoke(prefab.UnitNumber);
+            }
+            else
+            {
+                _bubblesCount++;
+            }
+            unit.gameObject.SetActive(true);
+        }
     }
 
-    public void InstantiateRandomUnit(GameObject prefab)
+    public Unit RandomUnit(int areaNumber)
     {
-
-        float randomXArea1 = Random.Range(_xBordersArea1.x, _xBordersArea1.y);
-        float randomXArea2 = Random.Range(_xBordersArea2.x, _xBordersArea2.y);
-        float randomXArea3 = Random.Range(_xBordersArea3.x, _xBordersArea3.y);
-        float randomY = Random.Range(_yBorders.x, _yBorders.y);
-        if (prefab.GetComponent<Unit>().Unitlevel == 1)
+        int randomUnitIndex = Random.Range(0, _units.Count);
+        Unit randomUnit = _units[randomUnitIndex];
+        while (randomUnit.Unitlevel != areaNumber && randomUnit.IsFirstTime == false)
         {
-            _randomPosition = new Vector2(randomXArea1, randomY);
+            randomUnitIndex = Random.Range(0, _units.Count);
+            randomUnit = _units[randomUnitIndex];
         }
-        if (prefab.GetComponent<Unit>().Unitlevel == 2)
-        {
-            _randomPosition = new Vector2(randomXArea2, randomY);
-        }
-        if (prefab.GetComponent<Unit>().Unitlevel == 3)
-        {
-            _randomPosition = new Vector2(randomXArea3, randomY);
-        }
-        var unit = Instantiate(prefab, _randomPosition, Quaternion.identity);
-
-        AddUnit(unit);
-
-    }
-
-    public GameObject RandomUnit(int areaNumber)
-    {
-
-        int randomUnitIndex = Random.Range(0, _prefabs.Count);
-        GameObject randomUnit = _prefabs[randomUnitIndex];
-        int randomUnitLevel = randomUnit.GetComponent<Unit>().Unitlevel;
-        if (randomUnitLevel == areaNumber && randomUnit.TryGetComponent(out BubbleUnit bubble) == false)
+        if (randomUnit.IsFirstTime == false)
         {
             return randomUnit;
         }
@@ -114,45 +151,40 @@ public class UnitSpawner : MonoBehaviour
             return _dnaPrefab;
         }
     }
-    public void ChangeTimeBetweenSpawn()
+
+    public void RemoveBubble(int unitLevel, Vector3 position)
     {
-        _timeBetweenSpawn--;
+        _areas[unitLevel - 1].RemoveBubble();
+        StartCoroutine(CreateBubbleEffect(position));
     }
-    public void AddUnit(GameObject unit)
+
+    private IEnumerator CreateBubbleEffect(Vector3 position)
     {
-        if (unit.TryGetComponent(out BubbleUnit bubble))
+        if (TryGetBubbleEffect(out GameObject bubbleEffect))
         {
-            _bubbles.Add(unit);
+            bubbleEffect.transform.position = position;
+            bubbleEffect.SetActive(true);
+            yield return new WaitForSeconds(_bubbleEffectLifetime);
+            bubbleEffect.SetActive(false);
+        }
+    }
+
+    private bool TryGetObject(out Unit unit, int unitNumber, int unitLevel, List<Unit> poolerUnits)
+    {
+        if (poolerUnits == _bubbles)
+        {
+            unit = poolerUnits.First(u => u.gameObject.activeSelf == false && u.Unitlevel == unitLevel);
         }
         else
         {
-            _units.Add(unit);
+            unit = poolerUnits.First(u => u.gameObject.activeSelf == false && u.UnitNumber == unitNumber);
         }
+        return unit != null;
     }
 
-    public void RemoveUnit(GameObject unit)
+    private bool TryGetBubbleEffect(out GameObject bubbleEffect)
     {
-        if (unit.TryGetComponent(out BubbleUnit bubble))
-        {
-            _bubbles.Remove(unit);
-        }
-        else
-        {
-            _units.Remove(unit);
-        }
-    }
-
-    public void CreateUnitViewer(Unit unit)
-    {
-        var unitViewer= Instantiate(_unitViewer,_unitVierwersContainer.transform);
-        unitViewer.RenderContentUnit(unit);
-        _unitViewers.Add(unitViewer.gameObject);
-        unitViewer.gameObject.SetActive(false);
-    }
-
-    private bool TryGetObject(out GameObject unitViewer)
-    {
-        unitViewer = _unitViewers.First(c => c.activeSelf == false);
-        return unitViewer != null;
+        bubbleEffect = _bubbleEffects.First(b => b.gameObject.activeSelf == false);
+        return bubbleEffect != null;
     }
 }

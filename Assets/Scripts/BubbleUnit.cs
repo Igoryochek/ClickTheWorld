@@ -5,5 +5,4 @@ using UnityEngine.EventSystems;
 
 public class BubbleUnit : Unit
 {
-
 }

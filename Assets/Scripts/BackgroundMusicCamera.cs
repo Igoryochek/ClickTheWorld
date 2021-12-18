@@ -16,7 +16,7 @@ public class BackgroundMusicCamera : MonoBehaviour
     {
         while (true)
         {
-            if (_audio.isPlaying==false)
+            if (_audio.isPlaying == false)
             {
                 int randomIndex = Random.Range(0, _clips.Count);
                 _audio.clip = _clips[randomIndex];
