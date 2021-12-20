@@ -2567,8 +2567,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe408d4c048841d40b4e2647a7f6ab66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _icon: {fileID: 311207375}
   _text: {fileID: 1512013719}
+  _icon: {fileID: 311207375}
   _coinsViewer: {fileID: 1661003633}
   _unitPrefab: {fileID: 3647067975310210721, guid: ac9a7c8c07a7b2b4ab5e887782b97d62, type: 3}
   _unitSpawner: {fileID: 2006610065}
@@ -20880,8 +20880,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1917952861}
-        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
-        m_MethodName: OpenPanel
+        m_TargetAssemblyTypeName: PanelController, Assembly-CSharp
+        m_MethodName: Open
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1815466526}
@@ -21116,8 +21116,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe408d4c048841d40b4e2647a7f6ab66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _icon: {fileID: 1594452525}
   _text: {fileID: 1702224674}
+  _icon: {fileID: 1594452525}
   _coinsViewer: {fileID: 1661003633}
   _unitPrefab: {fileID: -1935433269118617464, guid: fa958d22878121d4caf26cb3134f7286, type: 3}
   _unitSpawner: {fileID: 2006610065}
@@ -21740,8 +21740,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe408d4c048841d40b4e2647a7f6ab66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _icon: {fileID: 2032387608}
   _text: {fileID: 1451845064}
+  _icon: {fileID: 2032387608}
   _coinsViewer: {fileID: 1661003633}
   _unitPrefab: {fileID: 9173929589832312030, guid: bd0c9d50088b792429fc2f80988a6de1, type: 3}
   _unitSpawner: {fileID: 2006610065}
@@ -22505,8 +22505,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe408d4c048841d40b4e2647a7f6ab66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _icon: {fileID: 128430569}
   _text: {fileID: 1000755856}
+  _icon: {fileID: 128430569}
   _coinsViewer: {fileID: 1661003633}
   _unitPrefab: {fileID: 165470025180738680, guid: 5f6f1929bfe121245bd115526960d653, type: 3}
   _unitSpawner: {fileID: 2006610065}
@@ -22979,8 +22979,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe408d4c048841d40b4e2647a7f6ab66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _icon: {fileID: 420449690}
   _text: {fileID: 1095817486}
+  _icon: {fileID: 420449690}
   _coinsViewer: {fileID: 1661003633}
   _unitPrefab: {fileID: -1690017235617127854, guid: 3136ae2662684c84c9c04b3d570255a7, type: 3}
   _unitSpawner: {fileID: 2006610065}
@@ -23653,8 +23653,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe408d4c048841d40b4e2647a7f6ab66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _icon: {fileID: 1108298258}
   _text: {fileID: 331754873}
+  _icon: {fileID: 1108298258}
   _coinsViewer: {fileID: 1661003633}
   _unitPrefab: {fileID: 8581573724368437433, guid: e1eae32bcb5e9ae4aa333395f0717bbd, type: 3}
   _unitSpawner: {fileID: 2006610065}
@@ -25426,8 +25426,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe408d4c048841d40b4e2647a7f6ab66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _icon: {fileID: 1424722563}
   _text: {fileID: 738988496}
+  _icon: {fileID: 1424722563}
   _coinsViewer: {fileID: 1661003633}
   _unitPrefab: {fileID: 1937788176774808481, guid: 6c33c418e3af4274894f6429e7aada92, type: 3}
   _unitSpawner: {fileID: 2006610065}
@@ -26342,7 +26342,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5059413ec429c4507bb7bca2286fad19, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -27260,8 +27260,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe408d4c048841d40b4e2647a7f6ab66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _icon: {fileID: 376740998}
   _text: {fileID: 49403442}
+  _icon: {fileID: 376740998}
   _coinsViewer: {fileID: 1661003633}
   _unitPrefab: {fileID: -2414508260790378329, guid: 18beb5c2d58005c4792c4c4672d64473, type: 3}
   _unitSpawner: {fileID: 2006610065}
@@ -28099,8 +28099,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe408d4c048841d40b4e2647a7f6ab66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _icon: {fileID: 1904882150}
   _text: {fileID: 705361130}
+  _icon: {fileID: 1904882150}
   _coinsViewer: {fileID: 1661003633}
   _unitPrefab: {fileID: 6061409275312645788, guid: 81d93b6af4ebddf4294183a25513be51, type: 3}
   _unitSpawner: {fileID: 2006610065}
@@ -29148,8 +29148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe408d4c048841d40b4e2647a7f6ab66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _icon: {fileID: 874579400}
   _text: {fileID: 19421584}
+  _icon: {fileID: 874579400}
   _coinsViewer: {fileID: 1661003633}
   _unitPrefab: {fileID: 7947020226614436269, guid: f1ac2144a50dfca499cd430b78e3ea35, type: 3}
   _unitSpawner: {fileID: 2006610065}
@@ -29680,107 +29680,107 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _coins:
-  - {fileID: 964170043}
-  - {fileID: 1721983179}
-  - {fileID: 785211666}
-  - {fileID: 55191760}
-  - {fileID: 1432196306}
-  - {fileID: 1779354684}
-  - {fileID: 472501538}
-  - {fileID: 893166042}
-  - {fileID: 1921517892}
-  - {fileID: 109390721}
-  - {fileID: 1582992182}
-  - {fileID: 2035977316}
-  - {fileID: 1244253128}
-  - {fileID: 1465128504}
-  - {fileID: 667734614}
-  - {fileID: 1533505357}
-  - {fileID: 1788364945}
-  - {fileID: 313151497}
-  - {fileID: 706096155}
-  - {fileID: 443000369}
-  - {fileID: 587167557}
-  - {fileID: 1020450915}
-  - {fileID: 996777086}
-  - {fileID: 2013468007}
-  - {fileID: 1949163621}
-  - {fileID: 2129468940}
-  - {fileID: 1357814659}
-  - {fileID: 10285456}
-  - {fileID: 1435647400}
-  - {fileID: 622722425}
-  - {fileID: 1659736469}
-  - {fileID: 768457646}
-  - {fileID: 1441878467}
-  - {fileID: 573261398}
-  - {fileID: 243663978}
-  - {fileID: 1174425356}
-  - {fileID: 2113812753}
-  - {fileID: 1534039161}
-  - {fileID: 763471282}
-  - {fileID: 1465961620}
-  - {fileID: 1081513073}
-  - {fileID: 1493434720}
-  - {fileID: 148992478}
-  - {fileID: 89250723}
-  - {fileID: 1774560091}
-  - {fileID: 1527563006}
-  - {fileID: 711698211}
-  - {fileID: 1636810440}
-  - {fileID: 1677970071}
-  - {fileID: 699096273}
-  - {fileID: 1147557846}
-  - {fileID: 1483017773}
-  - {fileID: 1250876345}
-  - {fileID: 933566278}
-  - {fileID: 885106881}
-  - {fileID: 1105043785}
-  - {fileID: 806526358}
-  - {fileID: 584538838}
-  - {fileID: 542054134}
-  - {fileID: 2078168819}
-  - {fileID: 350762176}
-  - {fileID: 2100074972}
-  - {fileID: 383937007}
-  - {fileID: 1949703689}
-  - {fileID: 2123272512}
-  - {fileID: 1312634905}
-  - {fileID: 1216130886}
-  - {fileID: 585514855}
-  - {fileID: 936311996}
-  - {fileID: 1187599904}
-  - {fileID: 91191711}
-  - {fileID: 1461235109}
-  - {fileID: 1033580968}
-  - {fileID: 590869550}
-  - {fileID: 2084008917}
-  - {fileID: 616135463}
-  - {fileID: 268611699}
-  - {fileID: 993796907}
-  - {fileID: 1405494630}
-  - {fileID: 1354062755}
-  - {fileID: 1897120622}
-  - {fileID: 474825164}
-  - {fileID: 1760284358}
-  - {fileID: 1542221951}
-  - {fileID: 1004935865}
-  - {fileID: 513019685}
-  - {fileID: 1079896592}
-  - {fileID: 1588387966}
-  - {fileID: 901695061}
-  - {fileID: 73652969}
-  - {fileID: 1957600012}
-  - {fileID: 960262258}
-  - {fileID: 514016561}
-  - {fileID: 1602199265}
-  - {fileID: 1559295438}
-  - {fileID: 1293509025}
-  - {fileID: 2029388222}
-  - {fileID: 2138903215}
-  - {fileID: 296266216}
-  - {fileID: 1142571077}
-  - {fileID: 1343304592}
+  - {fileID: 964170044}
+  - {fileID: 1721983182}
+  - {fileID: 785211669}
+  - {fileID: 55191763}
+  - {fileID: 1432196309}
+  - {fileID: 1779354687}
+  - {fileID: 472501541}
+  - {fileID: 893166045}
+  - {fileID: 1921517895}
+  - {fileID: 109390724}
+  - {fileID: 1582992185}
+  - {fileID: 2035977319}
+  - {fileID: 1244253131}
+  - {fileID: 1465128507}
+  - {fileID: 667734617}
+  - {fileID: 1533505360}
+  - {fileID: 1788364948}
+  - {fileID: 313151500}
+  - {fileID: 706096158}
+  - {fileID: 443000372}
+  - {fileID: 587167560}
+  - {fileID: 1020450918}
+  - {fileID: 996777089}
+  - {fileID: 2013468010}
+  - {fileID: 1949163624}
+  - {fileID: 2129468943}
+  - {fileID: 1357814662}
+  - {fileID: 10285459}
+  - {fileID: 1435647403}
+  - {fileID: 622722428}
+  - {fileID: 1659736472}
+  - {fileID: 768457649}
+  - {fileID: 1441878470}
+  - {fileID: 573261401}
+  - {fileID: 243663981}
+  - {fileID: 1174425359}
+  - {fileID: 2113812756}
+  - {fileID: 1534039164}
+  - {fileID: 763471285}
+  - {fileID: 1465961623}
+  - {fileID: 1081513076}
+  - {fileID: 1493434723}
+  - {fileID: 148992481}
+  - {fileID: 89250726}
+  - {fileID: 1774560094}
+  - {fileID: 1527563009}
+  - {fileID: 711698214}
+  - {fileID: 1636810443}
+  - {fileID: 1677970074}
+  - {fileID: 699096276}
+  - {fileID: 1147557849}
+  - {fileID: 1483017776}
+  - {fileID: 1250876348}
+  - {fileID: 933566281}
+  - {fileID: 885106884}
+  - {fileID: 1105043788}
+  - {fileID: 806526361}
+  - {fileID: 584538841}
+  - {fileID: 542054137}
+  - {fileID: 2078168822}
+  - {fileID: 350762179}
+  - {fileID: 2100074975}
+  - {fileID: 383937010}
+  - {fileID: 1949703692}
+  - {fileID: 2123272515}
+  - {fileID: 1312634908}
+  - {fileID: 1216130889}
+  - {fileID: 585514858}
+  - {fileID: 936311999}
+  - {fileID: 1187599907}
+  - {fileID: 91191714}
+  - {fileID: 1461235112}
+  - {fileID: 1033580971}
+  - {fileID: 590869553}
+  - {fileID: 2084008920}
+  - {fileID: 616135466}
+  - {fileID: 268611702}
+  - {fileID: 993796910}
+  - {fileID: 1405494633}
+  - {fileID: 1354062758}
+  - {fileID: 1897120625}
+  - {fileID: 474825167}
+  - {fileID: 1760284361}
+  - {fileID: 1542221954}
+  - {fileID: 1004935868}
+  - {fileID: 513019688}
+  - {fileID: 1079896595}
+  - {fileID: 1588387969}
+  - {fileID: 901695064}
+  - {fileID: 73652972}
+  - {fileID: 1957600015}
+  - {fileID: 960262261}
+  - {fileID: 514016564}
+  - {fileID: 1602199268}
+  - {fileID: 1559295441}
+  - {fileID: 1293509028}
+  - {fileID: 2029388225}
+  - {fileID: 2138903218}
+  - {fileID: 296266219}
+  - {fileID: 1142571080}
+  - {fileID: 1343304595}
   _coinsViewer: {fileID: 1661003633}
 --- !u!1 &648441784
 GameObject:
@@ -30223,13 +30223,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc6320febff0331479df662e8f4ee429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _text: {fileID: 998775651}
   _area: {fileID: 1265201781}
   _coinsViewer: {fileID: 1661003633}
   _price: 10000
   _description: "\u0423\u043C\u0435\u043D\u044C\u0448\u0430\u0435\u0442 \u0432\u0440\u0435\u043C\u044F
     \u0441\u043E\u0437\u0434\u0430\u043D\u0438\u044F \u043F\u0443\u0437\u044B\u0440\u044C\u043A\u043E\u0432
     \u043F\u0435\u0440\u0432\u043E\u0439 \u044D\u043F\u043E\u0445\u0438"
-  _text: {fileID: 998775651}
 --- !u!1 &667734614
 GameObject:
   m_ObjectHideFlags: 0
@@ -31764,8 +31764,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1917952861}
-        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
-        m_MethodName: OpenPanel
+        m_TargetAssemblyTypeName: PanelController, Assembly-CSharp
+        m_MethodName: Open
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 588631085}
@@ -37369,8 +37369,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1917952861}
-        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
-        m_MethodName: ClosePanel
+        m_TargetAssemblyTypeName: PanelController, Assembly-CSharp
+        m_MethodName: Close
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 908656392}
@@ -40108,8 +40108,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe408d4c048841d40b4e2647a7f6ab66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _icon: {fileID: 1532762568}
   _text: {fileID: 1147923018}
+  _icon: {fileID: 1532762568}
   _coinsViewer: {fileID: 1661003633}
   _unitPrefab: {fileID: 1670391551590985697, guid: 643a6032d1a0fa84297ea1340b19eb8b, type: 3}
   _unitSpawner: {fileID: 2006610065}
@@ -42284,6 +42284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _crystalCountBar: {fileID: 1462628770}
   _coinsCountText: {fileID: 305623386}
+  _sellCrystalUnitViewer: {fileID: 1871742555}
 --- !u!1 &952902194
 GameObject:
   m_ObjectHideFlags: 0
@@ -49068,13 +49069,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc6320febff0331479df662e8f4ee429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _text: {fileID: 1954353479}
   _area: {fileID: 566848809}
   _coinsViewer: {fileID: 1661003633}
   _price: 100000
   _description: "\u0423\u043C\u0435\u043D\u044C\u0448\u0430\u0435\u0442 \u0432\u0440\u0435\u043C\u044F
     \u0441\u043E\u0437\u0434\u0430\u043D\u0438\u044F \u043F\u0443\u0437\u044B\u0440\u044C\u043A\u043E\u0432
     \u0432\u0442\u043E\u0440\u043E\u0439 \u044D\u043F\u043E\u0445\u0438"
-  _text: {fileID: 1954353479}
 --- !u!114 &1017639566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59890,8 +59891,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe408d4c048841d40b4e2647a7f6ab66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _icon: {fileID: 1708198627}
   _text: {fileID: 1900731476}
+  _icon: {fileID: 1708198627}
   _coinsViewer: {fileID: 1661003633}
   _unitPrefab: {fileID: 2889539506511489773, guid: 0a937cf379808474b82cd518e8aae3b6, type: 3}
   _unitSpawner: {fileID: 2006610065}
@@ -60364,8 +60365,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe408d4c048841d40b4e2647a7f6ab66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _icon: {fileID: 454356193}
   _text: {fileID: 245197566}
+  _icon: {fileID: 454356193}
   _coinsViewer: {fileID: 1661003633}
   _unitPrefab: {fileID: 7182466648294209069, guid: 6f1784f2bff67934b97cd5d52a1a1c67, type: 3}
   _unitSpawner: {fileID: 2006610065}
@@ -67580,8 +67581,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe408d4c048841d40b4e2647a7f6ab66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _icon: {fileID: 208621258}
   _text: {fileID: 1188725707}
+  _icon: {fileID: 208621258}
   _coinsViewer: {fileID: 1661003633}
   _unitPrefab: {fileID: 1013701591414761297, guid: fa9e47c33216f894d996fe9357ca5561, type: 3}
   _unitSpawner: {fileID: 2006610065}
@@ -74671,8 +74672,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe408d4c048841d40b4e2647a7f6ab66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _icon: {fileID: 1765659974}
   _text: {fileID: 1261901231}
+  _icon: {fileID: 1765659974}
   _coinsViewer: {fileID: 1661003633}
   _unitPrefab: {fileID: 4007958836199723740, guid: 8fcbcb5d634b19b4ea0c7130e35cdbec, type: 3}
   _unitSpawner: {fileID: 2006610065}
@@ -74767,13 +74768,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc6320febff0331479df662e8f4ee429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _text: {fileID: 1080949845}
   _area: {fileID: 543991291}
   _coinsViewer: {fileID: 1661003633}
   _price: 1000000
   _description: "\u0423\u043C\u0435\u043D\u044C\u0448\u0430\u0435\u0442 \u0432\u0440\u0435\u043C\u044F
     \u0441\u043E\u0437\u0434\u0430\u043D\u0438\u044F \u043F\u0443\u0437\u044B\u0440\u044C\u043A\u043E\u0432
     \u0442\u0440\u0435\u0442\u044C\u0435\u0439 \u044D\u043F\u043E\u0445\u0438"
-  _text: {fileID: 1080949845}
 --- !u!114 &1342946349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75463,8 +75464,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe408d4c048841d40b4e2647a7f6ab66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _icon: {fileID: 952902196}
   _text: {fileID: 721440399}
+  _icon: {fileID: 952902196}
   _coinsViewer: {fileID: 1661003633}
   _unitPrefab: {fileID: 4749343892514763433, guid: 2de72693391b5f4499a7c02ba1843450, type: 3}
   _unitSpawner: {fileID: 2006610065}
@@ -75559,8 +75560,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe408d4c048841d40b4e2647a7f6ab66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _icon: {fileID: 1836669248}
   _text: {fileID: 1325281342}
+  _icon: {fileID: 1836669248}
   _coinsViewer: {fileID: 1661003633}
   _unitPrefab: {fileID: 3877103572144387879, guid: 32f469b825c875f459ddaa286b143949, type: 3}
   _unitSpawner: {fileID: 2006610065}
@@ -80651,8 +80652,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe408d4c048841d40b4e2647a7f6ab66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _icon: {fileID: 1639896687}
   _text: {fileID: 270103705}
+  _icon: {fileID: 1639896687}
   _coinsViewer: {fileID: 1661003633}
   _unitPrefab: {fileID: 6134973045877821524, guid: bdf7085e029e8d44e91231cd769d940d, type: 3}
   _unitSpawner: {fileID: 2006610065}
@@ -98093,7 +98094,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1586141183}
-  - {fileID: 1871742554}
   m_Father: {fileID: 658070290}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -109023,7 +109023,8 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1871742554}
   m_Father: {fileID: 1532652638}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -115172,7 +115173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33910adb58b93724e895cce1971987de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coinsCountText: {fileID: 987299703}
+  _text: {fileID: 987299703}
 --- !u!114 &1661003635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122211,8 +122212,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe408d4c048841d40b4e2647a7f6ab66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _icon: {fileID: 723927823}
   _text: {fileID: 1214655961}
+  _icon: {fileID: 723927823}
   _coinsViewer: {fileID: 1661003633}
   _unitPrefab: {fileID: -4785575349601666423, guid: bae77d6cf3462a14da3890be797bfa94, type: 3}
   _unitSpawner: {fileID: 2006610065}
@@ -124072,8 +124073,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe408d4c048841d40b4e2647a7f6ab66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _icon: {fileID: 1398175160}
   _text: {fileID: 1461396703}
+  _icon: {fileID: 1398175160}
   _coinsViewer: {fileID: 1661003633}
   _unitPrefab: {fileID: -164773141444957351, guid: a9e56281170684c40993cb9e799819e9, type: 3}
   _unitSpawner: {fileID: 2006610065}
@@ -124148,12 +124149,12 @@ RectTransform:
   - {fileID: 896276697}
   - {fileID: 1228415266}
   - {fileID: 1264003591}
-  m_Father: {fileID: 1532652638}
-  m_RootOrder: 1
+  m_Father: {fileID: 1586141183}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 150.00002, y: -152.02039}
+  m_AnchoredPosition: {x: 150.00003, y: -152.02039}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1871742555
@@ -136348,8 +136349,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1917952861}
-        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
-        m_MethodName: ClosePanel
+        m_TargetAssemblyTypeName: PanelController, Assembly-CSharp
+        m_MethodName: Close
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 588631085}
@@ -136849,8 +136850,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1917952861}
-        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
-        m_MethodName: OpenPanel
+        m_TargetAssemblyTypeName: PanelController, Assembly-CSharp
+        m_MethodName: Open
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 908656392}
@@ -137108,8 +137109,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1917952861}
-        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
-        m_MethodName: ClosePanel
+        m_TargetAssemblyTypeName: PanelController, Assembly-CSharp
+        m_MethodName: Close
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1815466526}
@@ -148534,13 +148535,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc6320febff0331479df662e8f4ee429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _text: {fileID: 799929781}
   _area: {fileID: 287860002}
   _coinsViewer: {fileID: 1661003633}
   _price: 10000000
   _description: "\u0423\u043C\u0435\u043D\u044C\u0448\u0430\u0435\u0442 \u0432\u0440\u0435\u043C\u044F
     \u0441\u043E\u0437\u0434\u0430\u043D\u0438\u044F \u043F\u0443\u0437\u044B\u0440\u044C\u043A\u043E\u0432
     \u0447\u0435\u0442\u0432\u0451\u0440\u0442\u043E\u0439 \u044D\u043F\u043E\u0445\u0438"
-  _text: {fileID: 799929781}
 --- !u!114 &2137646400
 MonoBehaviour:
   m_ObjectHideFlags: 0

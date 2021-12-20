@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 
 public class SellCrystalUnitViewer : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class SellCrystalUnitViewer : MonoBehaviour
     private int _unitsCount;
     private int _unitsCountToSpawn = 10;
 
+    public event UnityAction<int> ChangedCrystalCount;
+
     private void Start()
     {
         ShowInfo();
@@ -23,7 +26,7 @@ public class SellCrystalUnitViewer : MonoBehaviour
     {
         if (_crystalCountViewer.CrystalCount >= _price)
         {
-            _crystalCountViewer.ChangeCrystalCount(-_price);
+            ChangedCrystalCount.Invoke(-_price);
             OnSellCrystalButtonClick();
         }
     }

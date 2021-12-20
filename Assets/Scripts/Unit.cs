@@ -86,7 +86,7 @@ public class Unit : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
         else
         {
             CreateCoin();
-            _coinsViewer.ChangeCoinCount(_coins);
+            _coinsViewer.IncreaseCoinCount(_coins);
         }
     }
 
@@ -105,7 +105,7 @@ public class Unit : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
 
     private void CreateCoin()
     {
-        _coinSpawner.ShowCoin(gameObject.transform.position, _coins);
+        _coinSpawner.CreateCoins(gameObject.transform.position, _coins);
     }
 
     public void OnBabbleClick(BubbleUnit bubble)
@@ -155,7 +155,7 @@ public class Unit : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
         while (true)
         {
             CreateCoin();
-            _coinsViewer.ChangeCoinCount(_coins);
+            _coinsViewer.IncreaseCoinCount(_coins);
             yield return new WaitForSeconds(_timeBeforeCoinSpawn);
             yield return null;
         }

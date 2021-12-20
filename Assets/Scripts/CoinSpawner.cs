@@ -7,10 +7,10 @@ using UnityEngine.Events;
 
 public class CoinSpawner : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> _coins;
+    [SerializeField] private List<Coin> _coins;
     [SerializeField] private CoinsViewer _coinsViewer;
 
-    private List<GameObject> _coinsList = new List<GameObject>();
+    private List<Coin> _coinsList = new List<Coin>();
     private int _coinLifetime = 2;
 
     private void Start()
@@ -20,23 +20,23 @@ public class CoinSpawner : MonoBehaviour
 
     private IEnumerator CreateCoin(Vector3 position, long count)
     {
-        if (TryGetObject(out GameObject coin))
+        if (TryGetObject(out Coin coin))
         {
             coin.transform.position = position;
             coin.GetComponent<Coin>().ShowInfo(count);
-            coin.SetActive(true);
+            coin.gameObject.SetActive(true);
             yield return new WaitForSeconds(_coinLifetime);
-            coin.SetActive(false);
+            coin.gameObject.SetActive(false);
         }
     }
 
-    private bool TryGetObject(out GameObject coin)
+    private bool TryGetObject(out Coin coin)
     {
-        coin = _coinsList.First(c => c.activeSelf == false);
+        coin = _coinsList.First(c => c.gameObject.activeSelf == false);
         return coin != null;
     }
 
-    public void ShowCoin(Vector3 position, long count)
+    public void CreateCoins(Vector3 position, long count)
     {
         StartCoroutine(CreateCoin(position, count));
     }

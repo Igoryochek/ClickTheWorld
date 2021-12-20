@@ -12,10 +12,12 @@ public class BubbleSpawnTimeViewer : MonoBehaviour
 
     private int _secondsCount;
     private int _second = 1;
+    private WaitForSeconds _waitForSeconds;
 
     private void Awake()
     {
         _secondsCount = _spawningArea.TimeBetweenSpawnBubble;
+        _waitForSeconds = new WaitForSeconds(_second);
     }
 
     private void OnEnable()
@@ -49,7 +51,7 @@ public class BubbleSpawnTimeViewer : MonoBehaviour
                 _secondsCount = _spawningArea.TimeBetweenSpawnBubble;
                 InitializeBubble(unit);
             }
-            yield return new WaitForSeconds(_second);
+            yield return _waitForSeconds;
         }
     }
 

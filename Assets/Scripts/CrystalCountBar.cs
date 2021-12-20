@@ -10,7 +10,7 @@ public class CrystalCountBar : MonoBehaviour
     [SerializeField] private UnitSpawner _spawner;
     [SerializeField] private int _sliderValue = 100;
 
-    public event UnityAction<int> ChangeCrystalCount;
+    public event UnityAction<int> ChangedCrystalCount;
 
     private void OnEnable()
     {
@@ -28,7 +28,7 @@ public class CrystalCountBar : MonoBehaviour
         if (_slider.value == _sliderValue)
         {
             int count = 1;
-            ChangeCrystalCount.Invoke(count);
+            ChangedCrystalCount.Invoke(count);
             _slider.value = 0;
         }
     }
