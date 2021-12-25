@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7994153725719467772}
   - component: {fileID: 6349084326740449352}
   - component: {fileID: 5343645635680041443}
+  - component: {fileID: -6108661911865553391}
   m_Layer: 6
   m_Name: bubble
   m_TagString: Untagged
@@ -141,7 +142,6 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: 953b14847b82acd468baec43692597d4, type: 3}
   _nextPrefab: {fileID: -1690017235617127854, guid: 3136ae2662684c84c9c04b3d570255a7, type: 3}
   _unitLevel: 1
-  _timeBetweenChangePosition: 7
   _sound: {fileID: 8300000, guid: 6bd1d3178a6f1b241869a8fa123380b7, type: 3}
   _price: 1000
   _coins: 1
@@ -260,3 +260,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-6108661911865553391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8788965725709063778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78001d56575994946b93fd9efcd1ed22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeBetweenChangePosition: 5
+  _unit: {fileID: 7994153725719467772}

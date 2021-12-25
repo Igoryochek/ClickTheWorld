@@ -13,15 +13,11 @@ public class Unit : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
     [SerializeField] private Sprite _icon;
     [SerializeField] private Unit _nextPrefab;
     [SerializeField] protected int _unitLevel;
-    [SerializeField] private float _timeBetweenChangePosition;
     [SerializeField] private AudioClip _sound;
     [SerializeField] private long _price = 1000;
     [SerializeField] protected long _coins = 1;
 
-    private float _randomMoveSpeed;
     private int _timeBeforeCoinSpawn = 5;
-    private Animator _animator;
-    private Vector2 _randomPosition;
     private AudioSource _audio;
     private bool _isUnitPressed = false;
     private bool _isDrugging = false;
@@ -32,16 +28,15 @@ public class Unit : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
     private CoinSpawner _coinSpawner;
     protected long _startCoins;
     private Coroutine _bubbleSpawn;
-    private Coroutine _changePosition;
-    private float _areaPositionOffset = 0;
-    private CoinsViewer _coinsViewer;
 
     public long Price => _price;
     public int UnitNumber => _unitNumber;
     public string Name => _name;
     public Sprite Icon => _icon;
-    public int Unitlevel => _unitLevel;
+    public int UnitLevel => _unitLevel;
     public bool IsFirstTime => _isFirstTime;
+    public bool IsUnitPressed =>_isUnitPressed;
+
 
 
     private void OnEnable()
@@ -52,7 +47,6 @@ public class Unit : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
             {
                 _bubbleSpawn = StartCoroutine(CreateConstantCoins());
             }
-            _changePosition = StartCoroutine(ChangePositionRandomly());
         }
         else
         {
@@ -61,18 +55,15 @@ public class Unit : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
     }
     private void OnDisable()
     {
-        if (_bubbleSpawn != null && _changePosition != null)
+        if (_bubbleSpawn != null)
         {
             StopCoroutine(_bubbleSpawn);
-            StopCoroutine(_changePosition);
         }
     }
     private void Awake()
     {
         _unitSpawner = FindObjectOfType<UnitSpawner>();
-        _coinsViewer = FindObjectOfType<CoinsViewer>();
         _coinSpawner = FindObjectOfType<CoinSpawner>();
-        _animator = GetComponent<Animator>();
         _audio = GetComponent<AudioSource>();
         _startCoins = _coins;
     }
@@ -86,7 +77,7 @@ public class Unit : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
         else
         {
             CreateCoin();
-            _coinsViewer.IncreaseCoinCount(_coins);
+            _coinSpawner.IncreaseCoinCount(_coins);
         }
     }
 
@@ -116,68 +107,22 @@ public class Unit : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
         gameObject.SetActive(false);
     }
 
-    private IEnumerator ChangePositionRandomly()
-    {
-        _randomPosition.x = transform.position.x;
-        _randomMoveSpeed = Random.Range(0.3f, 1.5f);
-        while (true)
-        {
-            if (transform.position.x == _randomPosition.x)
-            {
-                yield return new WaitForSeconds(_timeBetweenChangePosition);
-                if (_unitLevel == 1)
-                {
-                    _areaPositionOffset = 0;
-                }
-                else
-                {
-                    _areaPositionOffset += 10 * (_unitLevel - 1);
-
-                }
-                float randomXArea = Random.Range(_unitSpawner.XBordersArea.x, _unitSpawner.XBordersArea.y) + _areaPositionOffset;
-                float randomY = Random.Range(_unitSpawner.YBorders.x, _unitSpawner.YBorders.y);
-                _randomPosition = new Vector2(randomXArea, randomY);
-                _areaPositionOffset = 0;
-                _animator.SetTrigger("IsStarted");
-                yield return new WaitForSeconds(0.7f);
-            }
-            if (_isUnitPressed)
-            {
-                yield return new WaitForSeconds(_timeBetweenChangePosition);
-            }
-            transform.position = Vector2.MoveTowards(transform.position, _randomPosition, _randomMoveSpeed * Time.deltaTime);
-            yield return null;
-        }
-    }
-
     private IEnumerator CreateConstantCoins()
     {
+        WaitForSeconds timeBeforeCoinSpawn= new WaitForSeconds(_timeBeforeCoinSpawn);
+
         while (true)
         {
             CreateCoin();
-            _coinsViewer.IncreaseCoinCount(_coins);
-            yield return new WaitForSeconds(_timeBeforeCoinSpawn);
+            _coinSpawner.IncreaseCoinCount(_coins);
+            yield return timeBeforeCoinSpawn ;
             yield return null;
         }
     }
 
     protected void OnChangePrefab(GameObject other)
     {
-        ChangePrefab(other);
-    }
-
-    private void ChangePrefab(GameObject other)
-    {
-        if (_nextPrefab.TryGetComponent(out LastUnitOnlevel lastUnitOnlevel))
-        {
-            _unitSpawner.InstantiateUnit(_nextPrefab, gameObject.transform.position);
-        }
-        else
-        {
-            _unitSpawner.InitializeUnit(_nextPrefab, false, gameObject.transform.position);
-        }
-        gameObject.SetActive(false);
-        other.SetActive(false);
+        _unitSpawner.ChangePrefab(other,_nextPrefab);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

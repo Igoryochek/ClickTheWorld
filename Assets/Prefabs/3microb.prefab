@@ -15,8 +15,9 @@ GameObject:
   - component: {fileID: 5333769154135031253}
   - component: {fileID: -4130135173715910756}
   - component: {fileID: 8581573724368437433}
+  - component: {fileID: -586535530013457970}
   m_Layer: 0
-  m_Name: microb
+  m_Name: 3microb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -256,8 +257,20 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: aaac1116d77c16e45b5b4b48ead88ed4, type: 3}
   _nextPrefab: {fileID: 1013701591414761297, guid: fa9e47c33216f894d996fe9357ca5561, type: 3}
   _unitLevel: 1
-  _timeBetweenChangePosition: 5
   _sound: {fileID: 8300000, guid: ca02fb945abef13458c9154d6041861a, type: 3}
   _price: 4000
   _coins: 4
-  _hasCollided: 0
+--- !u!114 &-586535530013457970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4389522464247800804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78001d56575994946b93fd9efcd1ed22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeBetweenChangePosition: 5
+  _unit: {fileID: 8581573724368437433}

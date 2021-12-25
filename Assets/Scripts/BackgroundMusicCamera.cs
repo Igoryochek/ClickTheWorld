@@ -6,15 +6,16 @@ public class BackgroundMusicCamera : MonoBehaviour
 {
     [SerializeField] private List<AudioClip> _clips;
     [SerializeField] private AudioSource _audio;
+    [SerializeField] private bool _isNeedPlay;
 
     private void Start()
     {
-        StartCoroutine(OnStartGame());
+        StartCoroutine(PlayMusic());
     }
 
-    private IEnumerator OnStartGame()
+    private IEnumerator PlayMusic()
     {
-        while (true)
+        while (_isNeedPlay)
         {
             if (_audio.isPlaying == false)
             {

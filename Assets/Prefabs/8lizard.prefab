@@ -15,8 +15,9 @@ GameObject:
   - component: {fileID: -7183102752735295197}
   - component: {fileID: 6335036005807180970}
   - component: {fileID: 7182466648294209069}
+  - component: {fileID: 8005840794373396977}
   m_Layer: 0
-  m_Name: lizard
+  m_Name: 8lizard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -256,8 +257,20 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: c94d4f57ecb30fc408945ec8a69824cb, type: 3}
   _nextPrefab: {fileID: -164773141444957351, guid: a9e56281170684c40993cb9e799819e9, type: 3}
   _unitLevel: 2
-  _timeBetweenChangePosition: 5
   _sound: {fileID: 8300000, guid: ca02fb945abef13458c9154d6041861a, type: 3}
   _price: 128000
   _coins: 128
-  _hasCollided: 0
+--- !u!114 &8005840794373396977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8925119231405316034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78001d56575994946b93fd9efcd1ed22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeBetweenChangePosition: 5
+  _unit: {fileID: 7182466648294209069}

@@ -15,8 +15,9 @@ GameObject:
   - component: {fileID: 6462735874743932097}
   - component: {fileID: -3817258229359692898}
   - component: {fileID: 4749343892514763433}
+  - component: {fileID: 7209669588678206060}
   m_Layer: 0
-  m_Name: sea horse
+  m_Name: 5sea horse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -256,8 +257,20 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: c40f1e4a2a9d944498bd8bc2ac3efdf6, type: 3}
   _nextPrefab: {fileID: 1937788176774808481, guid: 6c33c418e3af4274894f6429e7aada92, type: 3}
   _unitLevel: 1
-  _timeBetweenChangePosition: 5
   _sound: {fileID: 8300000, guid: ca02fb945abef13458c9154d6041861a, type: 3}
   _price: 16000
   _coins: 16
-  _hasCollided: 0
+--- !u!114 &7209669588678206060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5465183342639903429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78001d56575994946b93fd9efcd1ed22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeBetweenChangePosition: 5
+  _unit: {fileID: 4749343892514763433}

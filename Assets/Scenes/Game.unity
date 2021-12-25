@@ -2569,7 +2569,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 1512013719}
   _icon: {fileID: 311207375}
-  _coinsViewer: {fileID: 1661003633}
+  _coinsSpawner: {fileID: 0}
   _unitPrefab: {fileID: 3647067975310210721, guid: ac9a7c8c07a7b2b4ab5e887782b97d62, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &108519494
@@ -21118,7 +21118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 1702224674}
   _icon: {fileID: 1594452525}
-  _coinsViewer: {fileID: 1661003633}
+  _coinsSpawner: {fileID: 0}
   _unitPrefab: {fileID: -1935433269118617464, guid: fa958d22878121d4caf26cb3134f7286, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &304761037
@@ -21742,7 +21742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 1451845064}
   _icon: {fileID: 2032387608}
-  _coinsViewer: {fileID: 1661003633}
+  _coinsSpawner: {fileID: 0}
   _unitPrefab: {fileID: 9173929589832312030, guid: bd0c9d50088b792429fc2f80988a6de1, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &317547555
@@ -22507,7 +22507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 1000755856}
   _icon: {fileID: 128430569}
-  _coinsViewer: {fileID: 1661003633}
+  _coinsSpawner: {fileID: 0}
   _unitPrefab: {fileID: 165470025180738680, guid: 5f6f1929bfe121245bd115526960d653, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &344321085
@@ -22981,7 +22981,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 1095817486}
   _icon: {fileID: 420449690}
-  _coinsViewer: {fileID: 1661003633}
+  _coinsSpawner: {fileID: 0}
   _unitPrefab: {fileID: -1690017235617127854, guid: 3136ae2662684c84c9c04b3d570255a7, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &368365542
@@ -23655,7 +23655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 331754873}
   _icon: {fileID: 1108298258}
-  _coinsViewer: {fileID: 1661003633}
+  _coinsSpawner: {fileID: 0}
   _unitPrefab: {fileID: 8581573724368437433, guid: e1eae32bcb5e9ae4aa333395f0717bbd, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &390221288
@@ -25428,7 +25428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 738988496}
   _icon: {fileID: 1424722563}
-  _coinsViewer: {fileID: 1661003633}
+  _coinsSpawner: {fileID: 0}
   _unitPrefab: {fileID: 1937788176774808481, guid: 6c33c418e3af4274894f6429e7aada92, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &487774347
@@ -26449,6 +26449,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5d6e42b338547477aa7a88708f894463, type: 3}
   - {fileID: 8300000, guid: 07f391589664f4e85904fa28802b4aa8, type: 3}
   _audio: {fileID: 519420033}
+  _isNeedPlay: 0
 --- !u!114 &519420035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27262,7 +27263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 49403442}
   _icon: {fileID: 376740998}
-  _coinsViewer: {fileID: 1661003633}
+  _coinsSpawner: {fileID: 0}
   _unitPrefab: {fileID: -2414508260790378329, guid: 18beb5c2d58005c4792c4c4672d64473, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &560361163
@@ -28101,7 +28102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 705361130}
   _icon: {fileID: 1904882150}
-  _coinsViewer: {fileID: 1661003633}
+  _coinsSpawner: {fileID: 0}
   _unitPrefab: {fileID: 6061409275312645788, guid: 81d93b6af4ebddf4294183a25513be51, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &574975873
@@ -29150,7 +29151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 19421584}
   _icon: {fileID: 874579400}
-  _coinsViewer: {fileID: 1661003633}
+  _coinsSpawner: {fileID: 0}
   _unitPrefab: {fileID: 7947020226614436269, guid: f1ac2144a50dfca499cd430b78e3ea35, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &615957227
@@ -30225,7 +30226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 998775651}
   _area: {fileID: 1265201781}
-  _coinsViewer: {fileID: 1661003633}
+  _coinsSpawner: {fileID: 0}
   _price: 10000
   _description: "\u0423\u043C\u0435\u043D\u044C\u0448\u0430\u0435\u0442 \u0432\u0440\u0435\u043C\u044F
     \u0441\u043E\u0437\u0434\u0430\u043D\u0438\u044F \u043F\u0443\u0437\u044B\u0440\u044C\u043A\u043E\u0432
@@ -30648,6 +30649,7 @@ GameObject:
   - component: {fileID: 694366809}
   - component: {fileID: 694366808}
   - component: {fileID: 694366807}
+  - component: {fileID: 694366810}
   m_Layer: 5
   m_Name: Area2BubbleSpawnTimeViewer (1)
   m_TagString: Untagged
@@ -30690,6 +30692,7 @@ MonoBehaviour:
   _secondsCountText: {fileID: 1514546706}
   _unitSpawner: {fileID: 2006610065}
   _spawningArea: {fileID: 566848809}
+  _timeCounterInfo: {fileID: 694366810}
 --- !u!114 &694366808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30728,6 +30731,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 694366805}
   m_CullTransparentMesh: 1
+--- !u!114 &694366810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694366805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeed3688ca7fc0940853993680b7be96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bubbleSpawnTimeViewer: {fileID: 694366807}
 --- !u!1 &699096273
 GameObject:
   m_ObjectHideFlags: 0
@@ -38320,6 +38336,7 @@ GameObject:
   - component: {fileID: 774815656}
   - component: {fileID: 774815655}
   - component: {fileID: 774815654}
+  - component: {fileID: 774815657}
   m_Layer: 5
   m_Name: Area4BubbleSpawnTimeViewer (3)
   m_TagString: Untagged
@@ -38362,6 +38379,7 @@ MonoBehaviour:
   _secondsCountText: {fileID: 517679398}
   _unitSpawner: {fileID: 2006610065}
   _spawningArea: {fileID: 287860002}
+  _timeCounterInfo: {fileID: 774815657}
 --- !u!114 &774815655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38400,6 +38418,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 774815652}
   m_CullTransparentMesh: 1
+--- !u!114 &774815657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774815652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeed3688ca7fc0940853993680b7be96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bubbleSpawnTimeViewer: {fileID: 774815654}
 --- !u!1 &775383083
 GameObject:
   m_ObjectHideFlags: 0
@@ -40110,7 +40141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 1147923018}
   _icon: {fileID: 1532762568}
-  _coinsViewer: {fileID: 1661003633}
+  _coinsSpawner: {fileID: 0}
   _unitPrefab: {fileID: 1670391551590985697, guid: 643a6032d1a0fa84297ea1340b19eb8b, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &840469375
@@ -49071,7 +49102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 1954353479}
   _area: {fileID: 566848809}
-  _coinsViewer: {fileID: 1661003633}
+  _coinsSpawner: {fileID: 0}
   _price: 100000
   _description: "\u0423\u043C\u0435\u043D\u044C\u0448\u0430\u0435\u0442 \u0432\u0440\u0435\u043C\u044F
     \u0441\u043E\u0437\u0434\u0430\u043D\u0438\u044F \u043F\u0443\u0437\u044B\u0440\u044C\u043A\u043E\u0432
@@ -59893,7 +59924,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 1900731476}
   _icon: {fileID: 1708198627}
-  _coinsViewer: {fileID: 1661003633}
+  _coinsSpawner: {fileID: 0}
   _unitPrefab: {fileID: 2889539506511489773, guid: 0a937cf379808474b82cd518e8aae3b6, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &1081379615
@@ -60367,7 +60398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 245197566}
   _icon: {fileID: 454356193}
-  _coinsViewer: {fileID: 1661003633}
+  _coinsSpawner: {fileID: 0}
   _unitPrefab: {fileID: 7182466648294209069, guid: 6f1784f2bff67934b97cd5d52a1a1c67, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &1094343237
@@ -67583,7 +67614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 1188725707}
   _icon: {fileID: 208621258}
-  _coinsViewer: {fileID: 1661003633}
+  _coinsSpawner: {fileID: 0}
   _unitPrefab: {fileID: 1013701591414761297, guid: fa9e47c33216f894d996fe9357ca5561, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &1208340603
@@ -74674,7 +74705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 1261901231}
   _icon: {fileID: 1765659974}
-  _coinsViewer: {fileID: 1661003633}
+  _coinsSpawner: {fileID: 0}
   _unitPrefab: {fileID: 4007958836199723740, guid: 8fcbcb5d634b19b4ea0c7130e35cdbec, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &1342083550
@@ -74770,7 +74801,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 1080949845}
   _area: {fileID: 543991291}
-  _coinsViewer: {fileID: 1661003633}
+  _coinsSpawner: {fileID: 0}
   _price: 1000000
   _description: "\u0423\u043C\u0435\u043D\u044C\u0448\u0430\u0435\u0442 \u0432\u0440\u0435\u043C\u044F
     \u0441\u043E\u0437\u0434\u0430\u043D\u0438\u044F \u043F\u0443\u0437\u044B\u0440\u044C\u043A\u043E\u0432
@@ -75466,7 +75497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 721440399}
   _icon: {fileID: 952902196}
-  _coinsViewer: {fileID: 1661003633}
+  _coinsSpawner: {fileID: 0}
   _unitPrefab: {fileID: 4749343892514763433, guid: 2de72693391b5f4499a7c02ba1843450, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &1360128081
@@ -75562,7 +75593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 1325281342}
   _icon: {fileID: 1836669248}
-  _coinsViewer: {fileID: 1661003633}
+  _coinsSpawner: {fileID: 0}
   _unitPrefab: {fileID: 3877103572144387879, guid: 32f469b825c875f459ddaa286b143949, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &1368324576
@@ -80654,7 +80685,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 270103705}
   _icon: {fileID: 1639896687}
-  _coinsViewer: {fileID: 1661003633}
+  _coinsSpawner: {fileID: 0}
   _unitPrefab: {fileID: 6134973045877821524, guid: bdf7085e029e8d44e91231cd769d940d, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &1384005129
@@ -109648,6 +109679,7 @@ GameObject:
   - component: {fileID: 1634837329}
   - component: {fileID: 1634837328}
   - component: {fileID: 1634837327}
+  - component: {fileID: 1634837330}
   m_Layer: 5
   m_Name: Area3BubbleSpawnTimeViewer (2)
   m_TagString: Untagged
@@ -109690,6 +109722,7 @@ MonoBehaviour:
   _secondsCountText: {fileID: 288198500}
   _unitSpawner: {fileID: 2006610065}
   _spawningArea: {fileID: 543991291}
+  _timeCounterInfo: {fileID: 1634837330}
 --- !u!114 &1634837328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109728,6 +109761,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1634837325}
   m_CullTransparentMesh: 1
+--- !u!114 &1634837330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634837325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeed3688ca7fc0940853993680b7be96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bubbleSpawnTimeViewer: {fileID: 1634837327}
 --- !u!1 &1636810440
 GameObject:
   m_ObjectHideFlags: 0
@@ -115174,6 +115220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 987299703}
+  _coinSpawner: {fileID: 644093760}
 --- !u!114 &1661003635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122214,7 +122261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 1214655961}
   _icon: {fileID: 723927823}
-  _coinsViewer: {fileID: 1661003633}
+  _coinsSpawner: {fileID: 0}
   _unitPrefab: {fileID: -4785575349601666423, guid: bae77d6cf3462a14da3890be797bfa94, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &1773916501
@@ -124075,7 +124122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 1461396703}
   _icon: {fileID: 1398175160}
-  _coinsViewer: {fileID: 1661003633}
+  _coinsSpawner: {fileID: 0}
   _unitPrefab: {fileID: -164773141444957351, guid: a9e56281170684c40993cb9e799819e9, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &1861637820
@@ -148537,7 +148584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 799929781}
   _area: {fileID: 287860002}
-  _coinsViewer: {fileID: 1661003633}
+  _coinsSpawner: {fileID: 0}
   _price: 10000000
   _description: "\u0423\u043C\u0435\u043D\u044C\u0448\u0430\u0435\u0442 \u0432\u0440\u0435\u043C\u044F
     \u0441\u043E\u0437\u0434\u0430\u043D\u0438\u044F \u043F\u0443\u0437\u044B\u0440\u044C\u043A\u043E\u0432
@@ -148702,6 +148749,7 @@ GameObject:
   - component: {fileID: 2144397899}
   - component: {fileID: 2144397898}
   - component: {fileID: 2144397900}
+  - component: {fileID: 2144397901}
   m_Layer: 5
   m_Name: Area1BubbleSpawnTimeViewer
   m_TagString: Untagged
@@ -148782,3 +148830,17 @@ MonoBehaviour:
   _secondsCountText: {fileID: 310507485}
   _unitSpawner: {fileID: 2006610065}
   _spawningArea: {fileID: 1265201781}
+  _timeCounterInfo: {fileID: 2144397901}
+--- !u!114 &2144397901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144397896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeed3688ca7fc0940853993680b7be96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bubbleSpawnTimeViewer: {fileID: 2144397900}

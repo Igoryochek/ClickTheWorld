@@ -16,8 +16,9 @@ GameObject:
   - component: {fileID: 5470090485317635756}
   - component: {fileID: 5470090485317635759}
   - component: {fileID: 1670391551590985697}
+  - component: {fileID: -8431266864052986963}
   m_Layer: 0
-  m_Name: crystal
+  m_Name: 20crystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -353,8 +354,20 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: c38d9140f370ab5479b56f8821f2b1a5, type: 3}
   _nextPrefab: {fileID: 1670391551590985697}
   _unitLevel: 4
-  _timeBetweenChangePosition: 5
   _sound: {fileID: 8300000, guid: ca02fb945abef13458c9154d6041861a, type: 3}
   _price: 1000000000
   _coins: 100000
-  _hasCollided: 0
+--- !u!114 &-8431266864052986963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5470090485317635752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78001d56575994946b93fd9efcd1ed22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeBetweenChangePosition: 5
+  _unit: {fileID: 1670391551590985697}

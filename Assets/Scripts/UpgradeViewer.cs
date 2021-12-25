@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class UpgradeViewer : Viewer
 {
     [SerializeField] protected Area _area;
-    [SerializeField] protected CoinsViewer _coinsViewer;
+    [SerializeField] protected CoinSpawner _coinsSpawner;
     [SerializeField] private long _price;
     [SerializeField] private string _description;
 
@@ -25,9 +25,9 @@ public class UpgradeViewer : Viewer
 
     protected void OnUpgradeButtonClick()
     {
-        if (_coinsViewer.CoinsCount > _price)
+        if (_coinsSpawner.CoinsCount > _price)
         {
-            _coinsViewer.DecreaseCoinCount(_price);
+            _coinsSpawner.DecreaseCoinCount(_price);
             ChangePrice();
         }
     }

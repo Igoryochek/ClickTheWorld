@@ -15,8 +15,9 @@ GameObject:
   - component: {fileID: -5656464089414690837}
   - component: {fileID: 4739455016944006788}
   - component: {fileID: 165470025180738680}
+  - component: {fileID: 5910859529231593693}
   m_Layer: 0
-  m_Name: modern man
+  m_Name: 14modern man
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -256,8 +257,20 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: 746fd17a72c1da54d8cb10e684bfdee5, type: 3}
   _nextPrefab: {fileID: -4869044701209483043, guid: 24ddebd04861b4f4091af7725ff6e578, type: 3}
   _unitLevel: 2
-  _timeBetweenChangePosition: 5
   _sound: {fileID: 8300000, guid: ca02fb945abef13458c9154d6041861a, type: 3}
   _price: 8000000
   _coins: 8000
-  _hasCollided: 0
+--- !u!114 &5910859529231593693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3091536499397121606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78001d56575994946b93fd9efcd1ed22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeBetweenChangePosition: 5
+  _unit: {fileID: 165470025180738680}

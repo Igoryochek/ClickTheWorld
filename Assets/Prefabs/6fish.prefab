@@ -15,8 +15,9 @@ GameObject:
   - component: {fileID: 6871633578307158359}
   - component: {fileID: -5222863278508103284}
   - component: {fileID: 1937788176774808481}
+  - component: {fileID: -6379247342607296640}
   m_Layer: 0
-  m_Name: fish
+  m_Name: 6fish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -256,8 +257,20 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: e18657c48b143c945a3c31e8a11c4386, type: 3}
   _nextPrefab: {fileID: -4286411665599180857, guid: 92560e3b86e2e1c4b9da2301d1d9a025, type: 3}
   _unitLevel: 1
-  _timeBetweenChangePosition: 5
   _sound: {fileID: 8300000, guid: ca02fb945abef13458c9154d6041861a, type: 3}
   _price: 32000
   _coins: 32
-  _hasCollided: 0
+--- !u!114 &-6379247342607296640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2713146179453628115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78001d56575994946b93fd9efcd1ed22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeBetweenChangePosition: 5
+  _unit: {fileID: 1937788176774808481}

@@ -5,18 +5,20 @@ using TMPro;
 
 public class CoinsViewer : Viewer
 {
-    private long _coinsCount;
+    [SerializeField] private CoinSpawner _coinSpawner;
 
-    public long CoinsCount => _coinsCount;
-
-    public void IncreaseCoinCount(long count)
+    private void OnEnable()
     {
-        _coinsCount += count;
-        ShowInfo(_coinsCount);
+        _coinSpawner.CountChanged += OnCountChanged;
     }
-    public void DecreaseCoinCount(long count)
+
+    private void OnDisable()
     {
-        _coinsCount -= count;
-        ShowInfo(_coinsCount);
+        _coinSpawner.CountChanged -= OnCountChanged;
+
+    }
+    private void OnCountChanged(long coinsCount)
+    {
+        ShowInfo(coinsCount);
     }
 }

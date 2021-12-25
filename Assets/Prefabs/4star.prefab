@@ -15,8 +15,9 @@ GameObject:
   - component: {fileID: -5534530207923213319}
   - component: {fileID: -7446895271833244103}
   - component: {fileID: 1013701591414761297}
+  - component: {fileID: -4370206240418822907}
   m_Layer: 0
-  m_Name: star
+  m_Name: 4star
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -256,8 +257,20 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: 3e1e9e37151d4c2469c831f788f417e8, type: 3}
   _nextPrefab: {fileID: 4749343892514763433, guid: 2de72693391b5f4499a7c02ba1843450, type: 3}
   _unitLevel: 1
-  _timeBetweenChangePosition: 5
   _sound: {fileID: 8300000, guid: ca02fb945abef13458c9154d6041861a, type: 3}
   _price: 8000
   _coins: 8
-  _hasCollided: 0
+--- !u!114 &-4370206240418822907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3691821427417121150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78001d56575994946b93fd9efcd1ed22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeBetweenChangePosition: 5
+  _unit: {fileID: 1013701591414761297}

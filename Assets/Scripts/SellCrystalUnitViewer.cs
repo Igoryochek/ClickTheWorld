@@ -9,7 +9,7 @@ public class SellCrystalUnitViewer : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _text;
     [SerializeField] private string _description;
     [SerializeField] private int _price;
-    [SerializeField] private CrystalCountViewer _crystalCountViewer;
+    [SerializeField] private CrystalCounter _crystalCountViewer;
     [SerializeField] private UnitSpawner _unitSpawner;
     [SerializeField] private List<Area> _areas;
 

@@ -15,8 +15,9 @@ GameObject:
   - component: {fileID: 196084931392550948}
   - component: {fileID: 196084931392550951}
   - component: {fileID: 3877103572144387879}
+  - component: {fileID: -3467839667794617258}
   m_Layer: 0
-  m_Name: futureMan2
+  m_Name: 15futureMan2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -256,8 +257,20 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: a0ba062b6dd51954bb11b8a82efd3d6a, type: 3}
   _nextPrefab: {fileID: 3647067975310210721, guid: ac9a7c8c07a7b2b4ab5e887782b97d62, type: 3}
   _unitLevel: 3
-  _timeBetweenChangePosition: 5
   _sound: {fileID: 8300000, guid: ca02fb945abef13458c9154d6041861a, type: 3}
   _price: 16000000
   _coins: 16000
-  _hasCollided: 0
+--- !u!114 &-3467839667794617258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196084931392550944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78001d56575994946b93fd9efcd1ed22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeBetweenChangePosition: 5
+  _unit: {fileID: 3877103572144387879}
