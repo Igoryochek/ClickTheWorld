@@ -13,7 +13,6 @@ public class CoinSpawner : MonoBehaviour
     private List<Coin> _coinsList = new List<Coin>();
     private int _coinLifetime = 2;
     private long _coinsCount;
-
     public long CoinsCount => _coinsCount;
 
     public event UnityAction<long> CountChanged;
@@ -48,13 +47,12 @@ public class CoinSpawner : MonoBehaviour
     public void IncreaseCoinCount(long count)
     {
         _coinsCount += count;
-        CountChanged.Invoke(_coinsCount);
+        CountChanged?.Invoke(_coinsCount);
     }
 
     public void DecreaseCoinCount(long count)
     {
         _coinsCount -= count;
-        CountChanged.Invoke(_coinsCount);
-
+        CountChanged?.Invoke(_coinsCount);
     }
 }

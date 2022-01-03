@@ -19,8 +19,8 @@ public class UpgradeViewer : Viewer
 
     private void Start()
     {
-        _number = _area.AreaNumber;
-        ShowInfo(_price,_description);
+        _number = _area.Number;
+        ShowInfo(_price, _description);
     }
 
     protected void OnUpgradeButtonClick()
@@ -35,6 +35,15 @@ public class UpgradeViewer : Viewer
     public void ChangePrice()
     {
         _price *= 3;
-        ShowInfo(_price,_description);
+        ShowInfo(_price, _description);
+    }
+
+    public void ChangeTimeBetweenSpawn()
+    {
+        if (_area.TimeBetweenSpawnBubble > _area.MinimumTimeBeforeSpawn)
+        {
+            _area.ChangeTimeBetweenSpawn();
+            OnUpgradeButtonClick();
+        }
     }
 }

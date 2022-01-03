@@ -29,7 +29,7 @@ public class Viewer : MonoBehaviour
         {
             if (count / 1000000 > 0)
             {
-                _text.text = count / 1000000000 > 0 ?name + _priceString + teraCount.ToString() + "." + lostTeraCount + "T":
+                _text.text = count / 1000000000 > 0 ? name + _priceString + teraCount.ToString() + "." + lostTeraCount + "T" :
                                         name + _priceString + megaCount.ToString() + "." + lostMegaCount + "M";
             }
             else

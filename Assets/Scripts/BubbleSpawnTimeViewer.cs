@@ -9,7 +9,6 @@ public class BubbleSpawnTimeViewer : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _secondsCountText;
     [SerializeField] private UnitSpawner _unitSpawner;
     [SerializeField] private Area _spawningArea;
-    [SerializeField] private TimeCounterInfo _timeCounterInfo;
 
     private int _secondsCount;
     private int _second = 1;
@@ -18,20 +17,22 @@ public class BubbleSpawnTimeViewer : MonoBehaviour
     public int Second => _second;
     public TextMeshProUGUI SecondCountText => _secondsCountText;
 
-    private void Awake()
-    {
-        _secondsCount = _spawningArea.TimeBetweenSpawnBubble;
-    }
+    public event UnityAction<int> BubbleCreated;
 
     private void OnEnable()
     {
-        _spawningArea.AreaIsActive += OnAreaIsActive;
+        _spawningArea.Active += OnAreaIsActive;
     }
 
     private void OnDisable()
     {
-        _spawningArea.AreaIsActive -= OnAreaIsActive;
+        _spawningArea.Active -= OnAreaIsActive;
 
+    }
+
+    private void Awake()
+    {
+        _secondsCount = _spawningArea.TimeBetweenSpawnBubble;
     }
 
     private void OnAreaIsActive(Unit unit, int time)
@@ -50,12 +51,12 @@ public class BubbleSpawnTimeViewer : MonoBehaviour
                 _secondsCount--;
             }
 
-            _timeCounterInfo.ShowInfo();
             if (_secondsCount < 0)
             {
                 _secondsCount = _spawningArea.TimeBetweenSpawnBubble;
                 InitializeBubble(unit);
             }
+            BubbleCreated.Invoke(_secondsCount);
             yield return waitForSeconds;
         }
     }
@@ -68,6 +69,4 @@ public class BubbleSpawnTimeViewer : MonoBehaviour
             _spawningArea.AddBubble(unit.gameObject);
         }
     }
-
-
 }

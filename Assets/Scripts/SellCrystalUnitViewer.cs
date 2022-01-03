@@ -16,17 +16,17 @@ public class SellCrystalUnitViewer : MonoBehaviour
     private int _unitsCount;
     private int _unitsCountToSpawn = 10;
 
-    public event UnityAction<int> ChangedCrystalCount;
+    public event UnityAction<int> CountChanged;
 
     private void Start()
     {
         ShowInfo();
     }
-    public void OnButtonClick()
+    public void OnBuyButtonClick()
     {
-        if (_crystalCountViewer.CrystalCount >= _price)
+        if (_crystalCountViewer.Count >= _price)
         {
-            ChangedCrystalCount.Invoke(-_price);
+            CountChanged.Invoke(-_price);
             OnSellCrystalButtonClick();
         }
     }
@@ -72,7 +72,7 @@ public class SellCrystalUnitViewer : MonoBehaviour
 
         foreach (var area in _areas)
         {
-            if (area.gameObject.activeSelf && area.AreaNumber != 4)
+            if (area.gameObject.activeSelf && area.Number != 4)
             {
                 activeAreas.Add(area);
             }

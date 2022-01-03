@@ -7,26 +7,27 @@ using TMPro;
 public class UnitViewer : Viewer
 {
     [SerializeField] private Image _icon;
-    [SerializeField] private CoinSpawner _coinsSpawner;
-    [SerializeField] private Unit _unitPrefab;
+    [SerializeField] private Unit _prefab;
     [SerializeField] private UnitSpawner _unitSpawner;
 
-    private int _unitNumber;
+    private CoinSpawner _coinsSpawner;
+    private int _number;
 
-    public int UnitNumber => _unitNumber;
+    public int Number => _number;
 
     private void Awake()
     {
-        _unitNumber = _unitPrefab.UnitNumber;
-        ShowInfo(_unitPrefab.Price,_unitPrefab.Name);
+        _coinsSpawner = FindObjectOfType<CoinSpawner>();
+        _number = _prefab.Number;
+        ShowInfo(_prefab.Price, _prefab.Name);
     }
 
     public void BuyButtonClick()
     {
-        if (_coinsSpawner.CoinsCount > _unitPrefab.Price)
+        if (_coinsSpawner.CoinsCount > _prefab.Price)
         {
-            _unitSpawner.InitializeUnit(_unitPrefab, true, gameObject.transform.position);
-            _coinsSpawner.DecreaseCoinCount(_unitPrefab.Price);
+            _unitSpawner.InitializeUnit(_prefab, true, gameObject.transform.position);
+            _coinsSpawner.DecreaseCoinCount(_prefab.Price);
         }
     }
 }

@@ -9,7 +9,6 @@ public class LastUnitOnlevel : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private Unit _prefab;
 
-    private Coroutine _coroutine;
     private Vector3 _newPosition;
     private CrystalUnit _crystal;
     private UnitSpawner _unitSpawner;
@@ -19,10 +18,7 @@ public class LastUnitOnlevel : MonoBehaviour
     {
         _crystal = FindObjectOfType<CrystalUnit>();
         _unitSpawner = FindObjectOfType<UnitSpawner>();
-        if (_coroutine == null)
-        {
-            _coroutine = StartCoroutine(RemoveFromLevel());
-        }
+        StartCoroutine(RemoveFromLevel());
     }
 
     private IEnumerator RemoveFromLevel()
@@ -38,7 +34,7 @@ public class LastUnitOnlevel : MonoBehaviour
         }
 
         Unit unit = GetComponent<Unit>();
-        if (_crystal != null && unit.UnitNumber == _crystal.UnitNumber)
+        if (_crystal != null && unit.Number == _crystal.Number)
         {
             _crystal.ChangeCrystalCountText();
         }

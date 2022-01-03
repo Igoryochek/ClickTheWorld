@@ -2569,8 +2569,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 1512013719}
   _icon: {fileID: 311207375}
-  _coinsSpawner: {fileID: 0}
-  _unitPrefab: {fileID: 3647067975310210721, guid: ac9a7c8c07a7b2b4ab5e887782b97d62, type: 3}
+  _prefab: {fileID: 3647067975310210721, guid: ac9a7c8c07a7b2b4ab5e887782b97d62, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &108519494
 MonoBehaviour:
@@ -13699,9 +13698,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2137646399}
-        m_TargetAssemblyTypeName: BubbleSpawnTimeUpgrade, Assembly-CSharp
-        m_MethodName: OnTimeBetweenSpawnBubbleButtonClick
+      - m_Target: {fileID: 2137646398}
+        m_TargetAssemblyTypeName: UpgradeViewer, Assembly-CSharp
+        m_MethodName: ChangeTimeBetweenSpawn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20352,15 +20351,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5cc9bc6e17430449bf97ca7cb1ce33e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _areaNumber: 4
+  _number: 4
   _image: {fileID: 287860003}
-  _areaSprite: {fileID: 21300000, guid: 85e3accd1a2775f42824afe234b7d688, type: 3}
-  _areaBubblePrefab: {fileID: 8666516708443603260, guid: ff027f1b12c894a4f94dbb268cd65ba7, type: 3}
+  _sprite: {fileID: 21300000, guid: 85e3accd1a2775f42824afe234b7d688, type: 3}
+  _bubblePrefab: {fileID: 8666516708443603260, guid: ff027f1b12c894a4f94dbb268cd65ba7, type: 3}
   _timeBetweenSpawnBubble: 72000
   _bubbleSpawnTimeViewer: {fileID: 774815654}
   _maxBubbleCount: 1
   _upgradeViewers:
-  - {fileID: 2137646399}
+  - {fileID: 0}
 --- !u!114 &287860003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20475,7 +20474,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -21118,8 +21117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 1702224674}
   _icon: {fileID: 1594452525}
-  _coinsSpawner: {fileID: 0}
-  _unitPrefab: {fileID: -1935433269118617464, guid: fa958d22878121d4caf26cb3134f7286, type: 3}
+  _prefab: {fileID: -1935433269118617464, guid: fa958d22878121d4caf26cb3134f7286, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &304761037
 MonoBehaviour:
@@ -21425,7 +21423,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -21742,8 +21740,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 1451845064}
   _icon: {fileID: 2032387608}
-  _coinsSpawner: {fileID: 0}
-  _unitPrefab: {fileID: 9173929589832312030, guid: bd0c9d50088b792429fc2f80988a6de1, type: 3}
+  _prefab: {fileID: 9173929589832312030, guid: bd0c9d50088b792429fc2f80988a6de1, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &317547555
 MonoBehaviour:
@@ -22507,8 +22504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 1000755856}
   _icon: {fileID: 128430569}
-  _coinsSpawner: {fileID: 0}
-  _unitPrefab: {fileID: 165470025180738680, guid: 5f6f1929bfe121245bd115526960d653, type: 3}
+  _prefab: {fileID: 165470025180738680, guid: 5f6f1929bfe121245bd115526960d653, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &344321085
 MonoBehaviour:
@@ -22981,8 +22977,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 1095817486}
   _icon: {fileID: 420449690}
-  _coinsSpawner: {fileID: 0}
-  _unitPrefab: {fileID: -1690017235617127854, guid: 3136ae2662684c84c9c04b3d570255a7, type: 3}
+  _prefab: {fileID: -1690017235617127854, guid: 3136ae2662684c84c9c04b3d570255a7, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &368365542
 MonoBehaviour:
@@ -23106,8 +23101,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 666696126}
-        m_TargetAssemblyTypeName: BubbleSpawnTimeUpgrade, Assembly-CSharp
-        m_MethodName: OnTimeBetweenSpawnBubbleButtonClick
+        m_TargetAssemblyTypeName: UpgradeViewer, Assembly-CSharp
+        m_MethodName: ChangeTimeBetweenSpawn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23655,8 +23650,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 331754873}
   _icon: {fileID: 1108298258}
-  _coinsSpawner: {fileID: 0}
-  _unitPrefab: {fileID: 8581573724368437433, guid: e1eae32bcb5e9ae4aa333395f0717bbd, type: 3}
+  _prefab: {fileID: 8581573724368437433, guid: e1eae32bcb5e9ae4aa333395f0717bbd, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &390221288
 MonoBehaviour:
@@ -25428,8 +25422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 738988496}
   _icon: {fileID: 1424722563}
-  _coinsSpawner: {fileID: 0}
-  _unitPrefab: {fileID: 1937788176774808481, guid: 6c33c418e3af4274894f6429e7aada92, type: 3}
+  _prefab: {fileID: 1937788176774808481, guid: 6c33c418e3af4274894f6429e7aada92, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &487774347
 MonoBehaviour:
@@ -26148,7 +26141,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -27008,15 +27001,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5cc9bc6e17430449bf97ca7cb1ce33e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _areaNumber: 3
+  _number: 3
   _image: {fileID: 543991292}
-  _areaSprite: {fileID: 21300000, guid: 2a2eaa1c09d260b4788a9fbf6023dfcf, type: 3}
-  _areaBubblePrefab: {fileID: 3683777583171450753, guid: df6e5b63b5edb4641a68806df8000e3c, type: 3}
+  _sprite: {fileID: 21300000, guid: 2a2eaa1c09d260b4788a9fbf6023dfcf, type: 3}
+  _bubblePrefab: {fileID: 3683777583171450753, guid: df6e5b63b5edb4641a68806df8000e3c, type: 3}
   _timeBetweenSpawnBubble: 36000
   _bubbleSpawnTimeViewer: {fileID: 1634837327}
   _maxBubbleCount: 3
   _upgradeViewers:
-  - {fileID: 1342946348}
+  - {fileID: 0}
 --- !u!114 &543991292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27263,8 +27256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 49403442}
   _icon: {fileID: 376740998}
-  _coinsSpawner: {fileID: 0}
-  _unitPrefab: {fileID: -2414508260790378329, guid: 18beb5c2d58005c4792c4c4672d64473, type: 3}
+  _prefab: {fileID: -2414508260790378329, guid: 18beb5c2d58005c4792c4c4672d64473, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &560361163
 MonoBehaviour:
@@ -27737,15 +27729,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5cc9bc6e17430449bf97ca7cb1ce33e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _areaNumber: 2
+  _number: 2
   _image: {fileID: 566848810}
-  _areaSprite: {fileID: 21300000, guid: 86c19e9da4319ec40b731441ecaaf7ea, type: 3}
-  _areaBubblePrefab: {fileID: -5037374917979755768, guid: 30fdb9bb75642aa47b2a653f5ab549bf, type: 3}
+  _sprite: {fileID: 21300000, guid: 86c19e9da4319ec40b731441ecaaf7ea, type: 3}
+  _bubblePrefab: {fileID: -5037374917979755768, guid: 30fdb9bb75642aa47b2a653f5ab549bf, type: 3}
   _timeBetweenSpawnBubble: 1500
   _bubbleSpawnTimeViewer: {fileID: 694366807}
   _maxBubbleCount: 6
   _upgradeViewers:
-  - {fileID: 1017639565}
+  - {fileID: 0}
 --- !u!114 &566848810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28102,8 +28094,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 705361130}
   _icon: {fileID: 1904882150}
-  _coinsSpawner: {fileID: 0}
-  _unitPrefab: {fileID: 6061409275312645788, guid: 81d93b6af4ebddf4294183a25513be51, type: 3}
+  _prefab: {fileID: 6061409275312645788, guid: 81d93b6af4ebddf4294183a25513be51, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &574975873
 MonoBehaviour:
@@ -29151,8 +29142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 19421584}
   _icon: {fileID: 874579400}
-  _coinsSpawner: {fileID: 0}
-  _unitPrefab: {fileID: 7947020226614436269, guid: f1ac2144a50dfca499cd430b78e3ea35, type: 3}
+  _prefab: {fileID: 7947020226614436269, guid: f1ac2144a50dfca499cd430b78e3ea35, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &615957227
 MonoBehaviour:
@@ -30221,12 +30211,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 666696122}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc6320febff0331479df662e8f4ee429, type: 3}
+  m_Script: {fileID: 11500000, guid: efa68eb06bda0594ab561f77292a5780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 998775651}
   _area: {fileID: 1265201781}
-  _coinsSpawner: {fileID: 0}
+  _coinsSpawner: {fileID: 644093760}
   _price: 10000
   _description: "\u0423\u043C\u0435\u043D\u044C\u0448\u0430\u0435\u0442 \u0432\u0440\u0435\u043C\u044F
     \u0441\u043E\u0437\u0434\u0430\u043D\u0438\u044F \u043F\u0443\u0437\u044B\u0440\u044C\u043A\u043E\u0432
@@ -30692,7 +30682,6 @@ MonoBehaviour:
   _secondsCountText: {fileID: 1514546706}
   _unitSpawner: {fileID: 2006610065}
   _spawningArea: {fileID: 566848809}
-  _timeCounterInfo: {fileID: 694366810}
 --- !u!114 &694366808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38379,7 +38368,6 @@ MonoBehaviour:
   _secondsCountText: {fileID: 517679398}
   _unitSpawner: {fileID: 2006610065}
   _spawningArea: {fileID: 287860002}
-  _timeCounterInfo: {fileID: 774815657}
 --- !u!114 &774815655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40141,8 +40129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 1147923018}
   _icon: {fileID: 1532762568}
-  _coinsSpawner: {fileID: 0}
-  _unitPrefab: {fileID: 1670391551590985697, guid: 643a6032d1a0fa84297ea1340b19eb8b, type: 3}
+  _prefab: {fileID: 1670391551590985697, guid: 643a6032d1a0fa84297ea1340b19eb8b, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &840469375
 MonoBehaviour:
@@ -49058,7 +49045,7 @@ GameObject:
   - component: {fileID: 1017639563}
   - component: {fileID: 1017639567}
   - component: {fileID: 1017639566}
-  - component: {fileID: 1017639565}
+  - component: {fileID: 1017639564}
   m_Layer: 5
   m_Name: 2SpawnTimeUpgrade (1)
   m_TagString: Untagged
@@ -49088,7 +49075,7 @@ RectTransform:
   m_AnchoredPosition: {x: 150, y: -400}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1017639565
+--- !u!114 &1017639564
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -49097,12 +49084,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1017639562}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc6320febff0331479df662e8f4ee429, type: 3}
+  m_Script: {fileID: 11500000, guid: efa68eb06bda0594ab561f77292a5780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 1954353479}
   _area: {fileID: 566848809}
-  _coinsSpawner: {fileID: 0}
+  _coinsSpawner: {fileID: 644093760}
   _price: 100000
   _description: "\u0423\u043C\u0435\u043D\u044C\u0448\u0430\u0435\u0442 \u0432\u0440\u0435\u043C\u044F
     \u0441\u043E\u0437\u0434\u0430\u043D\u0438\u044F \u043F\u0443\u0437\u044B\u0440\u044C\u043A\u043E\u0432
@@ -59924,8 +59911,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 1900731476}
   _icon: {fileID: 1708198627}
-  _coinsSpawner: {fileID: 0}
-  _unitPrefab: {fileID: 2889539506511489773, guid: 0a937cf379808474b82cd518e8aae3b6, type: 3}
+  _prefab: {fileID: 2889539506511489773, guid: 0a937cf379808474b82cd518e8aae3b6, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &1081379615
 MonoBehaviour:
@@ -60398,8 +60384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 245197566}
   _icon: {fileID: 454356193}
-  _coinsSpawner: {fileID: 0}
-  _unitPrefab: {fileID: 7182466648294209069, guid: 6f1784f2bff67934b97cd5d52a1a1c67, type: 3}
+  _prefab: {fileID: 7182466648294209069, guid: 6f1784f2bff67934b97cd5d52a1a1c67, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &1094343237
 MonoBehaviour:
@@ -60522,9 +60507,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1017639565}
-        m_TargetAssemblyTypeName: BubbleSpawnTimeUpgrade, Assembly-CSharp
-        m_MethodName: OnTimeBetweenSpawnBubbleButtonClick
+      - m_Target: {fileID: 1017639564}
+        m_TargetAssemblyTypeName: UpgradeViewer, Assembly-CSharp
+        m_MethodName: ChangeTimeBetweenSpawn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -67614,8 +67599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 1188725707}
   _icon: {fileID: 208621258}
-  _coinsSpawner: {fileID: 0}
-  _unitPrefab: {fileID: 1013701591414761297, guid: fa9e47c33216f894d996fe9357ca5561, type: 3}
+  _prefab: {fileID: 1013701591414761297, guid: fa9e47c33216f894d996fe9357ca5561, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &1208340603
 MonoBehaviour:
@@ -73888,15 +73872,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5cc9bc6e17430449bf97ca7cb1ce33e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _areaNumber: 1
+  _number: 1
   _image: {fileID: 1265201782}
-  _areaSprite: {fileID: 21300000, guid: fdcb30776a0cb284b850d74cc2d77991, type: 3}
-  _areaBubblePrefab: {fileID: 7994153725719467772, guid: 99f7ca3d66c280d4cbf012cf3518122a, type: 3}
+  _sprite: {fileID: 21300000, guid: fdcb30776a0cb284b850d74cc2d77991, type: 3}
+  _bubblePrefab: {fileID: 7994153725719467772, guid: 99f7ca3d66c280d4cbf012cf3518122a, type: 3}
   _timeBetweenSpawnBubble: 12
   _bubbleSpawnTimeViewer: {fileID: 2144397900}
   _maxBubbleCount: 12
   _upgradeViewers:
-  - {fileID: 666696126}
+  - {fileID: 0}
 --- !u!114 &1265201782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74705,8 +74689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 1261901231}
   _icon: {fileID: 1765659974}
-  _coinsSpawner: {fileID: 0}
-  _unitPrefab: {fileID: 4007958836199723740, guid: 8fcbcb5d634b19b4ea0c7130e35cdbec, type: 3}
+  _prefab: {fileID: 4007958836199723740, guid: 8fcbcb5d634b19b4ea0c7130e35cdbec, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &1342083550
 MonoBehaviour:
@@ -74757,7 +74740,7 @@ GameObject:
   - component: {fileID: 1342946346}
   - component: {fileID: 1342946350}
   - component: {fileID: 1342946349}
-  - component: {fileID: 1342946348}
+  - component: {fileID: 1342946347}
   m_Layer: 5
   m_Name: 3SpawnTimeUpgrade (2)
   m_TagString: Untagged
@@ -74787,7 +74770,7 @@ RectTransform:
   m_AnchoredPosition: {x: 150, y: -400}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1342946348
+--- !u!114 &1342946347
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74796,12 +74779,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1342946345}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc6320febff0331479df662e8f4ee429, type: 3}
+  m_Script: {fileID: 11500000, guid: efa68eb06bda0594ab561f77292a5780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 1080949845}
   _area: {fileID: 543991291}
-  _coinsSpawner: {fileID: 0}
+  _coinsSpawner: {fileID: 644093760}
   _price: 1000000
   _description: "\u0423\u043C\u0435\u043D\u044C\u0448\u0430\u0435\u0442 \u0432\u0440\u0435\u043C\u044F
     \u0441\u043E\u0437\u0434\u0430\u043D\u0438\u044F \u043F\u0443\u0437\u044B\u0440\u044C\u043A\u043E\u0432
@@ -75497,8 +75480,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 721440399}
   _icon: {fileID: 952902196}
-  _coinsSpawner: {fileID: 0}
-  _unitPrefab: {fileID: 4749343892514763433, guid: 2de72693391b5f4499a7c02ba1843450, type: 3}
+  _prefab: {fileID: 4749343892514763433, guid: 2de72693391b5f4499a7c02ba1843450, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &1360128081
 MonoBehaviour:
@@ -75593,8 +75575,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 1325281342}
   _icon: {fileID: 1836669248}
-  _coinsSpawner: {fileID: 0}
-  _unitPrefab: {fileID: 3877103572144387879, guid: 32f469b825c875f459ddaa286b143949, type: 3}
+  _prefab: {fileID: 3877103572144387879, guid: 32f469b825c875f459ddaa286b143949, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &1368324576
 MonoBehaviour:
@@ -80685,8 +80666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 270103705}
   _icon: {fileID: 1639896687}
-  _coinsSpawner: {fileID: 0}
-  _unitPrefab: {fileID: 6134973045877821524, guid: bdf7085e029e8d44e91231cd769d940d, type: 3}
+  _prefab: {fileID: 6134973045877821524, guid: bdf7085e029e8d44e91231cd769d940d, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &1384005129
 MonoBehaviour:
@@ -92836,7 +92816,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -109722,7 +109702,6 @@ MonoBehaviour:
   _secondsCountText: {fileID: 288198500}
   _unitSpawner: {fileID: 2006610065}
   _spawningArea: {fileID: 543991291}
-  _timeCounterInfo: {fileID: 1634837330}
 --- !u!114 &1634837328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122261,8 +122240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 1214655961}
   _icon: {fileID: 723927823}
-  _coinsSpawner: {fileID: 0}
-  _unitPrefab: {fileID: -4785575349601666423, guid: bae77d6cf3462a14da3890be797bfa94, type: 3}
+  _prefab: {fileID: -4785575349601666423, guid: bae77d6cf3462a14da3890be797bfa94, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &1773916501
 MonoBehaviour:
@@ -124122,8 +124100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 1461396703}
   _icon: {fileID: 1398175160}
-  _coinsSpawner: {fileID: 0}
-  _unitPrefab: {fileID: -164773141444957351, guid: a9e56281170684c40993cb9e799819e9, type: 3}
+  _prefab: {fileID: -164773141444957351, guid: a9e56281170684c40993cb9e799819e9, type: 3}
   _unitSpawner: {fileID: 2006610065}
 --- !u!114 &1861637820
 MonoBehaviour:
@@ -130257,9 +130234,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1342946348}
-        m_TargetAssemblyTypeName: BubbleSpawnTimeUpgrade, Assembly-CSharp
-        m_MethodName: OnTimeBetweenSpawnBubbleButtonClick
+      - m_Target: {fileID: 1342946347}
+        m_TargetAssemblyTypeName: UpgradeViewer, Assembly-CSharp
+        m_MethodName: ChangeTimeBetweenSpawn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -136957,7 +136934,7 @@ GameObject:
   - component: {fileID: 2006610066}
   - component: {fileID: 2006610065}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: UnitSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148540,7 +148517,7 @@ GameObject:
   - component: {fileID: 2137646397}
   - component: {fileID: 2137646401}
   - component: {fileID: 2137646400}
-  - component: {fileID: 2137646399}
+  - component: {fileID: 2137646398}
   m_Layer: 5
   m_Name: 4SpawnTimeUpgrade (3)
   m_TagString: Untagged
@@ -148570,7 +148547,7 @@ RectTransform:
   m_AnchoredPosition: {x: 150, y: -400}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2137646399
+--- !u!114 &2137646398
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148579,12 +148556,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2137646396}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc6320febff0331479df662e8f4ee429, type: 3}
+  m_Script: {fileID: 11500000, guid: efa68eb06bda0594ab561f77292a5780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 799929781}
   _area: {fileID: 287860002}
-  _coinsSpawner: {fileID: 0}
+  _coinsSpawner: {fileID: 644093760}
   _price: 10000000
   _description: "\u0423\u043C\u0435\u043D\u044C\u0448\u0430\u0435\u0442 \u0432\u0440\u0435\u043C\u044F
     \u0441\u043E\u0437\u0434\u0430\u043D\u0438\u044F \u043F\u0443\u0437\u044B\u0440\u044C\u043A\u043E\u0432
@@ -148830,7 +148807,6 @@ MonoBehaviour:
   _secondsCountText: {fileID: 310507485}
   _unitSpawner: {fileID: 2006610065}
   _spawningArea: {fileID: 1265201781}
-  _timeCounterInfo: {fileID: 2144397901}
 --- !u!114 &2144397901
 MonoBehaviour:
   m_ObjectHideFlags: 0

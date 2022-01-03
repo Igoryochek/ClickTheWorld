@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class UnitMover : MonoBehaviour
 {
     [SerializeField] private float _timeBetweenChangePosition;
@@ -17,7 +18,7 @@ public class UnitMover : MonoBehaviour
 
     private void OnEnable()
     {
-        _changePositionRandomly=StartCoroutine(ChangePositionRandomly());
+        _changePositionRandomly = StartCoroutine(ChangePositionRandomly());
     }
 
     private void OnDisable()
@@ -27,7 +28,7 @@ public class UnitMover : MonoBehaviour
     private void Awake()
     {
         _unitSpawner = FindObjectOfType<UnitSpawner>();
-        _animator =gameObject.GetComponent<Animator>();
+        _animator = gameObject.GetComponent<Animator>();
     }
 
     private IEnumerator ChangePositionRandomly()
@@ -42,13 +43,13 @@ public class UnitMover : MonoBehaviour
             {
                 yield return new WaitForSeconds(_timeBetweenChangePosition);
                 _animator.SetTrigger(_isStarted);
-                if (_unit.UnitLevel == 1)
+                if (_unit.Level == 1)
                 {
                     _areaPositionOffset = 0;
                 }
                 else
                 {
-                    _areaPositionOffset += 10 * (_unit.UnitLevel - 1);
+                    _areaPositionOffset += 10 * (_unit.Level - 1);
 
                 }
                 float randomXArea = Random.Range(_unitSpawner.XBordersArea.x, _unitSpawner.XBordersArea.y) + _areaPositionOffset;
@@ -57,7 +58,7 @@ public class UnitMover : MonoBehaviour
                 _areaPositionOffset = 0;
                 yield return waitForSeconds;
             }
-            if (_unit.IsUnitPressed)
+            if (_unit.UnitPressed)
             {
                 yield return timeBetweenChangePosition;
             }

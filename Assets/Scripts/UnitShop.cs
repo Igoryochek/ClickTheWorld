@@ -19,7 +19,7 @@ public class UnitShop : MonoBehaviour
     {
         foreach (var unitViewer in _unitViewers)
         {
-            if (unitViewer.gameObject.activeSelf == false && unitViewer.UnitNumber == unitNumber)
+            if (unitViewer.gameObject.activeSelf == false && unitViewer.Number == unitNumber)
             {
                 unitViewer.gameObject.SetActive(true);
             }

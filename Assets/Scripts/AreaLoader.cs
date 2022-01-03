@@ -16,7 +16,7 @@ public class AreaLoader : MonoBehaviour
     {
         if (TryGetComponent(out Camera camera))
         {
-            LoadArea(_areas[_firstAreaIndex].AreaNumber);
+            LoadArea(_areas[_firstAreaIndex].Number);
         }
     }
 
@@ -29,7 +29,7 @@ public class AreaLoader : MonoBehaviour
 
         foreach (var area in _areas)
         {
-            if (area.AreaNumber == areaNumber)
+            if (area.Number == areaNumber)
             {
                 if (areaNumber == 1)
                 {

@@ -253,10 +253,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: "\u043B\u0435\u0442\u0430\u044E\u0449\u0438\u0439 \u0440\u043E\u0431\u043E\u0442"
-  _unitNumber: 18
+  _number: 18
   _icon: {fileID: 21300000, guid: d080abf2af72d094f92bdc43231fe3b5, type: 3}
   _nextPrefab: {fileID: 2889539506511489773, guid: 0a937cf379808474b82cd518e8aae3b6, type: 3}
-  _unitLevel: 3
+  _level: 3
   _sound: {fileID: 8300000, guid: ca02fb945abef13458c9154d6041861a, type: 3}
   _price: 128000000
   _coins: 120000

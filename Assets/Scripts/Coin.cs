@@ -16,7 +16,7 @@ public class Coin : MonoBehaviour
 
         if (count / 1000 > 0)
         {
-            _text.text = count / 1000000 > 0 ? megaCount.ToString() + "." + lostMegaCount.ToString() + "M":
+            _text.text = count / 1000000 > 0 ? megaCount.ToString() + "." + lostMegaCount.ToString() + "M" :
                                 kiloCount.ToString() + "." + lostKiloCount.ToString() + "K";
         }
         else

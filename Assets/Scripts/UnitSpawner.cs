@@ -28,7 +28,6 @@ public class UnitSpawner : MonoBehaviour
     private int _bubblesCount;
     private int _bubbleEffectLifetime = 1;
 
-
     public Vector2 XBordersArea => _xBordersArea;
 
     public Vector2 YBorders => _yBorders;
@@ -37,6 +36,7 @@ public class UnitSpawner : MonoBehaviour
 
 
     public event UnityAction<int> IsUnitCreated;
+    public event UnityAction<int> IsBubbleCreated;
 
     private void Awake()
     {
@@ -44,7 +44,7 @@ public class UnitSpawner : MonoBehaviour
         {
             for (int j = 0; j < _areas[i].MaxBubbleCount + 1; j++)
             {
-                var bubble = Instantiate(_areas[i].AreasBubblePrefab, _bubblesPooler.transform);
+                var bubble = Instantiate(_areas[i].BubblePrefab, _bubblesPooler.transform);
                 _bubbles.Add(bubble);
                 bubble.gameObject.SetActive(false);
             }
@@ -63,7 +63,7 @@ public class UnitSpawner : MonoBehaviour
     public void InstantiateUnit(Unit unit, Vector3 position)
     {
         Instantiate(unit, position, Quaternion.identity);
-        int areaButtonIndex = unit.UnitLevel - 1;
+        int areaButtonIndex = unit.Level - 1;
         if (_areaButtons[areaButtonIndex].activeSelf == false)
         {
             if (_areaButtons[0].activeSelf == false)
@@ -81,6 +81,7 @@ public class UnitSpawner : MonoBehaviour
         if (prefab.TryGetComponent(out BubbleUnit bubbleUnit))
         {
             units = _bubbles;
+            IsBubbleCreated?.Invoke(prefab.Level);
         }
         else
         {
@@ -88,17 +89,17 @@ public class UnitSpawner : MonoBehaviour
         }
 
 
-        if (TryGetObject(out Unit unit, prefab.UnitNumber, prefab.UnitLevel, units))
+        if (TryGetObject(out Unit unit, prefab.Number, prefab.Level, units))
         {
             if (isNeedRandomPosition)
             {
-                if (unit.UnitLevel == 1)
+                if (unit.Level == 1)
                 {
                     _areaPositionOffset = 0;
                 }
                 else
                 {
-                    _areaPositionOffset += 10 * (unit.UnitLevel - 1);
+                    _areaPositionOffset += 10 * (unit.Level - 1);
 
                 }
                 float randomXArea = Random.Range(_xBordersArea.x, _xBordersArea.y) + _areaPositionOffset;
@@ -116,15 +117,15 @@ public class UnitSpawner : MonoBehaviour
                 {
                     foreach (var unit2 in _units)
                     {
-                        if (unit2.UnitNumber == unit.UnitNumber)
+                        if (unit2.Number == unit.Number)
                         {
                             unit2.SetNoFirstTime();
                         }
                     }
                 }
-                _unitShop.InitializeUnitViewer(unit.UnitNumber);
-                unit.ResetBools();
-                IsUnitCreated?.Invoke(prefab.UnitNumber);
+                _unitShop.InitializeUnitViewer(unit.Number);
+                unit.UpdateUnitCondition();
+                IsUnitCreated?.Invoke(prefab.Number);
             }
             else
             {
@@ -138,21 +139,19 @@ public class UnitSpawner : MonoBehaviour
     {
         if (prefab.TryGetComponent(out LastUnitOnlevel lastUnitOnlevel))
         {
-            InstantiateUnit(prefab, gameObject.transform.position);
+            InstantiateUnit(prefab, other.gameObject.transform.position);
         }
         else
         {
-            InitializeUnit(prefab, false, gameObject.transform.position);
+            InitializeUnit(prefab, false, other.gameObject.transform.position);
         }
-        gameObject.SetActive(false);
-        other.SetActive(false);
     }
 
     public Unit RandomUnit(int areaNumber)
     {
         int randomUnitIndex = Random.Range(0, _units.Count);
         Unit randomUnit = _units[randomUnitIndex];
-        while (randomUnit.UnitLevel != areaNumber && randomUnit.IsFirstTime == false)
+        while (randomUnit.Level != areaNumber && randomUnit.IsFirstTime == false)
         {
             randomUnitIndex = Random.Range(0, _units.Count);
             randomUnit = _units[randomUnitIndex];
@@ -188,11 +187,11 @@ public class UnitSpawner : MonoBehaviour
     {
         if (poolerUnits == _bubbles)
         {
-            unit = poolerUnits.First(u => u.gameObject.activeSelf == false && u.UnitLevel == unitLevel);
+            unit = poolerUnits.First(u => u.gameObject.activeSelf == false && u.Level == unitLevel);
         }
         else
         {
-            unit = poolerUnits.First(u => u.gameObject.activeSelf == false && u.UnitNumber == unitNumber);
+            unit = poolerUnits.First(u => u.gameObject.activeSelf == false && u.Number == unitNumber);
         }
         return unit != null;
     }

@@ -15,7 +15,6 @@ public class CoinsViewer : Viewer
     private void OnDisable()
     {
         _coinSpawner.CountChanged -= OnCountChanged;
-
     }
     private void OnCountChanged(long coinsCount)
     {

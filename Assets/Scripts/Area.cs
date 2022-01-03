@@ -7,10 +7,10 @@ using UnityEngine.UI;
 
 public class Area : MonoBehaviour
 {
-    [SerializeField] private int _areaNumber;
+    [SerializeField] private int _number;
     [SerializeField] private Image _image;
-    [SerializeField] private Sprite _areaSprite;
-    [SerializeField] private Unit _areaBubblePrefab;
+    [SerializeField] private Sprite _sprite;
+    [SerializeField] private Unit _bubblePrefab;
     [SerializeField] private int _timeBetweenSpawnBubble;
     [SerializeField] private BubbleSpawnTimeViewer _bubbleSpawnTimeViewer;
     [SerializeField] private int _maxBubbleCount;
@@ -21,22 +21,22 @@ public class Area : MonoBehaviour
     private int _minimumTimeBetweenSpawnCoefficient = 3;
     private int _timeBetweenSpawnCoefficient = 10;
 
-    public int AreaNumber => _areaNumber;
+    public int Number => _number;
     public Image Image => _image;
-    public Sprite AreaSprite => _areaSprite;
+    public Sprite Sprite => _sprite;
     public int MaxBubbleCount => _maxBubbleCount;
-    public Unit AreasBubblePrefab => _areaBubblePrefab;
+    public Unit BubblePrefab => _bubblePrefab;
     public BubbleSpawnTimeViewer BubbleSpawnTimeViewer => _bubbleSpawnTimeViewer;
     public int TimeBetweenSpawnBubble => _timeBetweenSpawnBubble;
     public int MinimumTimeBeforeSpawn => _minimumTimeBeforeSpawn;
 
     public int BubblesCount => _bubbles.Count;
 
-    public event UnityAction<Unit, int> AreaIsActive;
+    public event UnityAction<Unit, int> Active;
 
     private void Start()
     {
-        AreaIsActive?.Invoke(_areaBubblePrefab, _timeBetweenSpawnBubble);
+        Active?.Invoke(_bubblePrefab, _timeBetweenSpawnBubble);
         _minimumTimeBeforeSpawn = _timeBetweenSpawnBubble / _minimumTimeBetweenSpawnCoefficient;
         foreach (var upgradeViewer in _upgradeViewers)
         {
@@ -54,7 +54,7 @@ public class Area : MonoBehaviour
 
     public void ChangeAreaSprite()
     {
-        _image.sprite = _areaSprite;
+        _image.sprite = _sprite;
     }
     public void AddBubble(GameObject unit)
     {

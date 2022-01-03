@@ -6,12 +6,9 @@ using UnityEngine;
 public class ScriptableUnit : ScriptableObject
 {
     [SerializeField] private string _description;
-    [SerializeField] private int _price;
     [SerializeField] private Unit _prefab;
 
-
     public string Description => _description;
-    public int Price => _price;
     public Unit Prefab => _prefab;
 
 }

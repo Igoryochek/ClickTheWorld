@@ -253,10 +253,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: "\u0414\u041D\u041A"
-  _unitNumber: 1
+  _number: 1
   _icon: {fileID: 21300000, guid: ba809277a5b16d844817be54d5c59900, type: 3}
   _nextPrefab: {fileID: -2414508260790378329, guid: 18beb5c2d58005c4792c4c4672d64473, type: 3}
-  _unitLevel: 1
+  _level: 1
   _sound: {fileID: 8300000, guid: ca02fb945abef13458c9154d6041861a, type: 3}
   _price: 1000
   _coins: 1

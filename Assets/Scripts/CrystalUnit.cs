@@ -6,7 +6,7 @@ using TMPro;
 public class CrystalUnit : Unit
 {
     private TextMeshProUGUI _crystalCountText;
-    private int _crystalCount = 1;
+    private int _crystalCount;
 
     private void Start()
     {
@@ -21,15 +21,15 @@ public class CrystalUnit : Unit
         }
     }
 
-    public void ChangeCrystalCountText()
-    {
-        ChangeCrystalCount();
-        _crystalCountText.text = _crystalCount.ToString();
-    }
-
     private void ChangeCrystalCount()
     {
         _crystalCount++;
         _coins += _startCoins;
+    }
+
+    public void ChangeCrystalCountText()
+    {
+        ChangeCrystalCount();
+        _crystalCountText.text = _crystalCount.ToString();
     }
 }

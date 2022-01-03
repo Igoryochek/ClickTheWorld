@@ -22,7 +22,7 @@ public class CrystalCountBar : MonoBehaviour
         _spawner.IsUnitCreated -= OnUnitCreated;
     }
 
-    public void OnUnitCreated(int unitNumber)
+    private void OnUnitCreated(int unitNumber)
     {
         _slider.value++;
         if (_slider.value == _sliderValue)

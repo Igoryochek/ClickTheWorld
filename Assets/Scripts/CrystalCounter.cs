@@ -9,31 +9,31 @@ public class CrystalCounter : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _coinsCountText;
     [SerializeField] private SellCrystalUnitViewer _sellCrystalUnitViewer;
 
-    private int _crystalCount;
+    private int _count;
 
-    public int CrystalCount => _crystalCount;
+    public int Count => _count;
 
     private void OnEnable()
     {
-        _crystalCountBar.CountChanged += ChangeCrystalCount;
-        _sellCrystalUnitViewer.ChangedCrystalCount += ChangeCrystalCount;
+        _crystalCountBar.CountChanged += ChangeCount;
+        _sellCrystalUnitViewer.CountChanged += ChangeCount;
 
     }
 
     private void OnDisable()
     {
-        _crystalCountBar.CountChanged -= ChangeCrystalCount;
-        _sellCrystalUnitViewer.ChangedCrystalCount += ChangeCrystalCount;
+        _crystalCountBar.CountChanged -= ChangeCount;
+        _sellCrystalUnitViewer.CountChanged -= ChangeCount;
 
     }
 
     private void Start()
     {
-        _coinsCountText.text = _crystalCount.ToString();
+        _coinsCountText.text = _count.ToString();
     }
-    private void ChangeCrystalCount(int count)
+    private void ChangeCount(int count)
     {
-        _crystalCount += count; ;
-        _coinsCountText.text = _crystalCount.ToString();
+        _count += count; ;
+        _coinsCountText.text = _count.ToString();
     }
 }
