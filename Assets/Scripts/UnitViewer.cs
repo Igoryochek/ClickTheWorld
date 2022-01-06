@@ -8,7 +8,7 @@ public class UnitViewer : Viewer
 {
     [SerializeField] private Image _icon;
     [SerializeField] private Unit _prefab;
-    [SerializeField] private UnitSpawner _unitSpawner;
+    [SerializeField] private Spawner _spawner;
 
     private CoinSpawner _coinsSpawner;
     private int _number;
@@ -26,7 +26,7 @@ public class UnitViewer : Viewer
     {
         if (_coinsSpawner.CoinsCount > _prefab.Price)
         {
-            _unitSpawner.InitializeUnit(_prefab, true, gameObject.transform.position);
+            _spawner.InitializeUnit(_prefab, true, gameObject.transform.position);
             _coinsSpawner.DecreaseCoinCount(_prefab.Price);
         }
     }

@@ -20,10 +20,10 @@ public class Unit : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
     private AudioSource _audio;
     private bool _unitPressed = false;
     private bool _isDrugging = false;
-    private bool _isFirstTime = true;
+    private bool _firstTime = true;
     private bool _hasCollided = false;
     private bool _isCreated = false;
-    private UnitSpawner _unitSpawner;
+    private Spawner _spawner;
     private CoinSpawner _coinSpawner;
     protected long _startCoins;
     private Coroutine _bubbleSpawn;
@@ -33,7 +33,7 @@ public class Unit : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
     public string Name => _name;
     public Sprite Icon => _icon;
     public int Level => _level;
-    public bool IsFirstTime => _isFirstTime;
+    public bool FirstTime => _firstTime;
     public bool UnitPressed => _unitPressed;
 
 
@@ -61,7 +61,7 @@ public class Unit : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
     }
     private void Awake()
     {
-        _unitSpawner = FindObjectOfType<UnitSpawner>();
+        _spawner = FindObjectOfType<Spawner>();
         _coinSpawner = FindObjectOfType<CoinSpawner>();
         _audio = GetComponent<AudioSource>();
         _startCoins = _coins;
@@ -74,9 +74,9 @@ public class Unit : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
 
     private void OnBabbleClick(BubbleUnit bubble)
     {
-        _unitSpawner.InitializeUnit(_nextPrefab, false, gameObject.transform.position);
+        _spawner.InitializeUnit(_nextPrefab, false, gameObject.transform.position);
         _audio.PlayOneShot(_sound);
-        _unitSpawner.RemoveBubble(_level, gameObject.transform.position);
+        _spawner.RemoveBubble(_level, gameObject.transform.position);
         gameObject.SetActive(false);
     }
 
@@ -95,7 +95,7 @@ public class Unit : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
 
     private void OnChangePrefab(GameObject other)
     {
-        _unitSpawner.ChangePrefab(other, _nextPrefab);
+        _spawner.ChangePrefab(other, _nextPrefab);
         gameObject.SetActive(false);
         other.SetActive(false);
     }
@@ -160,6 +160,6 @@ public class Unit : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
 
     public void SetNoFirstTime()
     {
-        _isFirstTime = false;
+        _firstTime = false;
     }
 }

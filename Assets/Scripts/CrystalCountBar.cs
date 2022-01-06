@@ -7,19 +7,19 @@ using UnityEngine.UI;
 public class CrystalCountBar : MonoBehaviour
 {
     [SerializeField] private Slider _slider;
-    [SerializeField] private UnitSpawner _spawner;
+    [SerializeField] private Spawner _spawner;
     [SerializeField] private int _sliderValue = 100;
 
     public event UnityAction<int> CountChanged;
 
     private void OnEnable()
     {
-        _spawner.IsUnitCreated += OnUnitCreated;
+        _spawner.UnitCreated += OnUnitCreated;
     }
 
     private void OnDisable()
     {
-        _spawner.IsUnitCreated -= OnUnitCreated;
+        _spawner.UnitCreated -= OnUnitCreated;
     }
 
     private void OnUnitCreated(int unitNumber)

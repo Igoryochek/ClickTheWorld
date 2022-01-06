@@ -17,14 +17,12 @@ public class CrystalCounter : MonoBehaviour
     {
         _crystalCountBar.CountChanged += ChangeCount;
         _sellCrystalUnitViewer.CountChanged += ChangeCount;
-
     }
 
     private void OnDisable()
     {
         _crystalCountBar.CountChanged -= ChangeCount;
         _sellCrystalUnitViewer.CountChanged -= ChangeCount;
-
     }
 
     private void Start()

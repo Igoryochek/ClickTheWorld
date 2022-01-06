@@ -7,14 +7,17 @@ public class UnitMover : MonoBehaviour
 {
     [SerializeField] private float _timeBetweenChangePosition;
     [SerializeField] private Unit _unit;
+    [SerializeField] private float _changePositionTime=0.7f;
+    [SerializeField] private float _minimumSpeed=0.3f;
+    [SerializeField] private float _maximumSpeed=1.5f;
 
     private Vector2 _randomPosition;
     private float _randomMoveSpeed;
     private float _areaPositionOffset = 0;
-    private UnitSpawner _unitSpawner;
+    private Spawner _unitSpawner;
     private Animator _animator;
     private Coroutine _changePositionRandomly;
-    private const string _isStarted = "IsStarted";
+    private const string IsStarted = "IsStarted";
 
     private void OnEnable()
     {
@@ -27,22 +30,22 @@ public class UnitMover : MonoBehaviour
     }
     private void Awake()
     {
-        _unitSpawner = FindObjectOfType<UnitSpawner>();
+        _unitSpawner = FindObjectOfType<Spawner>();
         _animator = gameObject.GetComponent<Animator>();
     }
 
     private IEnumerator ChangePositionRandomly()
     {
         _randomPosition.x = transform.position.x;
-        _randomMoveSpeed = Random.Range(0.3f, 1.5f);
+        _randomMoveSpeed = Random.Range(_minimumSpeed, _maximumSpeed);
         while (true)
         {
-            WaitForSeconds waitForSeconds = new WaitForSeconds(0.7f);
+            WaitForSeconds waitForSeconds = new WaitForSeconds(_changePositionTime);
             WaitForSeconds timeBetweenChangePosition = new WaitForSeconds(_timeBetweenChangePosition);
             if (transform.position.x == _randomPosition.x)
             {
                 yield return new WaitForSeconds(_timeBetweenChangePosition);
-                _animator.SetTrigger(_isStarted);
+                _animator.SetTrigger(IsStarted);
                 if (_unit.Level == 1)
                 {
                     _areaPositionOffset = 0;

@@ -29,7 +29,6 @@ public class Area : MonoBehaviour
     public BubbleSpawnTimeViewer BubbleSpawnTimeViewer => _bubbleSpawnTimeViewer;
     public int TimeBetweenSpawnBubble => _timeBetweenSpawnBubble;
     public int MinimumTimeBeforeSpawn => _minimumTimeBeforeSpawn;
-
     public int BubblesCount => _bubbles.Count;
 
     public event UnityAction<Unit, int> Active;

@@ -10,7 +10,7 @@ public class SellCrystalUnitViewer : MonoBehaviour
     [SerializeField] private string _description;
     [SerializeField] private int _price;
     [SerializeField] private CrystalCounter _crystalCountViewer;
-    [SerializeField] private UnitSpawner _unitSpawner;
+    [SerializeField] private Spawner _spawner;
     [SerializeField] private List<Area> _areas;
 
     private int _unitsCount;
@@ -72,7 +72,7 @@ public class SellCrystalUnitViewer : MonoBehaviour
 
         foreach (var area in _areas)
         {
-            if (area.gameObject.activeSelf && area.Number != 4)
+            if (area.gameObject.activeSelf && area.Number !=_areas.Count)
             {
                 activeAreas.Add(area);
             }
@@ -84,14 +84,14 @@ public class SellCrystalUnitViewer : MonoBehaviour
 
             for (int i = randomIndexActiveArea; i == randomIndexActiveArea; i++)
             {
-                tempUnits.Add(_unitSpawner.RandomUnit(i + 1));
+                tempUnits.Add(_spawner.RandomUnit(i + 1));
             }
             _unitsCount++;
         }
         _unitsCount = 0;
         foreach (var unit in tempUnits)
         {
-            _unitSpawner.InitializeUnit(unit, true, gameObject.transform.position);
+            _spawner.InitializeUnit(unit, true, gameObject.transform.position);
         }
     }
 }

@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class BubbleSpawnTimeViewer : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _secondsCountText;
-    [SerializeField] private UnitSpawner _unitSpawner;
+    [SerializeField] private Spawner _spawner;
     [SerializeField] private Area _spawningArea;
 
     private int _secondsCount;
@@ -27,7 +27,6 @@ public class BubbleSpawnTimeViewer : MonoBehaviour
     private void OnDisable()
     {
         _spawningArea.Active -= OnAreaIsActive;
-
     }
 
     private void Awake()
@@ -65,7 +64,7 @@ public class BubbleSpawnTimeViewer : MonoBehaviour
     {
         if (_spawningArea.BubblesCount <= _spawningArea.MaxBubbleCount)
         {
-            _unitSpawner.InitializeUnit(unit, true, gameObject.transform.position);
+            _spawner.InitializeUnit(unit, true, gameObject.transform.position);
             _spawningArea.AddBubble(unit.gameObject);
         }
     }

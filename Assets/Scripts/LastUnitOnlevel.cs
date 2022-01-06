@@ -11,19 +11,19 @@ public class LastUnitOnlevel : MonoBehaviour
 
     private Vector3 _newPosition;
     private CrystalUnit _crystal;
-    private UnitSpawner _unitSpawner;
-    private const string _removeFromLevel = "RemoveFromLevel";
+    private Spawner _spawner;
+    private const string RemoveAnimation= "RemoveFromLevel";
 
     private void Start()
     {
         _crystal = FindObjectOfType<CrystalUnit>();
-        _unitSpawner = FindObjectOfType<UnitSpawner>();
+        _spawner = FindObjectOfType<Spawner>();
         StartCoroutine(RemoveFromLevel());
     }
 
     private IEnumerator RemoveFromLevel()
     {
-        _animator.SetBool(_removeFromLevel, true);
+        _animator.SetBool(RemoveAnimation, true);
         float newPositionX = transform.position.x + 10;
         _newPosition = new Vector3(newPositionX, transform.position.y, transform.position.z);
         float xBorder = transform.position.x + 8;
@@ -40,7 +40,7 @@ public class LastUnitOnlevel : MonoBehaviour
         }
         else
         {
-            _unitSpawner.InitializeUnit(_prefab, true, gameObject.transform.position);
+            _spawner.InitializeUnit(_prefab, true, gameObject.transform.position);
         }
         Destroy(gameObject);
     }

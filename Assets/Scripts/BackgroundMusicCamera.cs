@@ -6,7 +6,7 @@ public class BackgroundMusicCamera : MonoBehaviour
 {
     [SerializeField] private List<AudioClip> _clips;
     [SerializeField] private AudioSource _audio;
-    [SerializeField] private bool _isNeedPlay;
+    [SerializeField] private bool _needPlay;
 
     private void Start()
     {
@@ -15,7 +15,7 @@ public class BackgroundMusicCamera : MonoBehaviour
 
     private IEnumerator PlayMusic()
     {
-        while (_isNeedPlay)
+        while (_needPlay)
         {
             if (_audio.isPlaying == false)
             {
