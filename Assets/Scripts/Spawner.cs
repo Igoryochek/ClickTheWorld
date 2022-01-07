@@ -16,13 +16,11 @@ public class Spawner : MonoBehaviour
     [SerializeField] private List<GameObject> _areaButtons;
     [SerializeField] private List<GameObject> _bubbleEffects;
     [SerializeField] private List<GameObject> _areas;
-    [SerializeField] private List<GameObject> _scriptableUnits;
+    [SerializeField] private List<ScriptableUnit> _scriptableUnits;
     [SerializeField] private GameObject _unitsPooler;
-    [SerializeField] private GameObject _bubblesPooler;
     [SerializeField] private UnitShop _unitShop;
 
     private List<Unit> _units = new List<Unit>();
-    private List<Unit> _bubbles = new List<Unit>();
     private int _sameUnitsCount = 15;
     private float _areaPositionOffset = 0;
     private int _bubblesCount=15;
@@ -39,28 +37,17 @@ public class Spawner : MonoBehaviour
 
     private void Awake()
     {
-        CreatePooler(_bubblesCount,_areas);
-        CreatePooler(_sameUnitsCount,_scriptableUnits);
+        CreatePooler(_sameUnitsCount,_prefabs);
     }
 
-    private void CreatePooler(int maxCount,List<GameObject> gameObjects)
+    private void CreatePooler(int maxCount,List<Unit> units)
     {
-        for (int i = 0; i < gameObjects.Count; i++)
+        for (int i = 0; i < units.Count; i++)
         {
-            Unit unit = new Unit();
-
             for (int j = 0; j < maxCount + 1; j++)
             {
-                if (gameObjects[i].TryGetComponent(out Area area))
-                {
-                    unit = Instantiate(area.BubblePrefab, _bubblesPooler.transform);
-                    _bubbles.Add(unit);
-                }
-                else if (gameObjects[i].TryGetComponent(out ScriptableUnit scriptableUnit))
-                {
-                    unit = Instantiate(scriptableUnit.Prefab, _unitsPooler.transform);
-                    _units.Add(unit);
-                }
+                var unit = Instantiate(units[i], _unitsPooler.transform);
+                _units.Add(unit);              
                 unit.gameObject.SetActive(false);
             }
         }
@@ -84,8 +71,7 @@ public class Spawner : MonoBehaviour
     public void InitializeUnit(Unit prefab, bool isNeedRandomPosition, Vector3 position)
     {
         List<Unit> units = new List<Unit>();
-
-        if (TryGetObject(out Unit unitPrefab, prefab.Number, prefab.Level, units))
+        if (TryGetObject(out Unit unitPrefab, prefab.Number))
         {
             if (isNeedRandomPosition)
             {
@@ -97,7 +83,6 @@ public class Spawner : MonoBehaviour
             }
             if (TryGetComponent(out BubbleUnit bubble) == false)
             {
-                units = _units;
                 if (unitPrefab.FirstTime == true)
                 {
                     foreach (var unit in _units)
@@ -114,7 +99,6 @@ public class Spawner : MonoBehaviour
             }
             else
             {
-                units = _bubbles;
                 BubbleCreated?.Invoke(prefab.Level);
                 _bubblesCount++;
             }
@@ -187,16 +171,9 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    private bool TryGetObject(out Unit unit, int unitNumber, int unitLevel, List<Unit> poolerUnits)
+    private bool TryGetObject(out Unit unit, int unitNumber)
     {
-        if (poolerUnits == _bubbles)
-        {
-            unit = poolerUnits.First(u => u.gameObject.activeSelf == false && u.Level == unitLevel);
-        }
-        else
-        {
-            unit = poolerUnits.First(u => u.gameObject.activeSelf == false && u.Number == unitNumber);
-        }
+        unit = _units.First(u => u.gameObject.activeSelf == false && u.Number == unitNumber);      
         return unit != null;
     }
 

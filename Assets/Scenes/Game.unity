@@ -550,7 +550,7 @@ Transform:
   - {fileID: 2046984182}
   - {fileID: 242687384}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &26318310
 GameObject:
@@ -2570,7 +2570,7 @@ MonoBehaviour:
   _text: {fileID: 1512013719}
   _icon: {fileID: 311207375}
   _prefab: {fileID: 3647067975310210721, guid: ac9a7c8c07a7b2b4ab5e887782b97d62, type: 3}
-  _unitSpawner: {fileID: 2006610065}
+  _spawner: {fileID: 2006610065}
 --- !u!114 &108519494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20358,8 +20358,7 @@ MonoBehaviour:
   _timeBetweenSpawnBubble: 72000
   _bubbleSpawnTimeViewer: {fileID: 774815654}
   _maxBubbleCount: 1
-  _upgradeViewers:
-  - {fileID: 0}
+  _upgradeViewer: {fileID: 2137646398}
 --- !u!114 &287860003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21118,7 +21117,7 @@ MonoBehaviour:
   _text: {fileID: 1702224674}
   _icon: {fileID: 1594452525}
   _prefab: {fileID: -1935433269118617464, guid: fa958d22878121d4caf26cb3134f7286, type: 3}
-  _unitSpawner: {fileID: 2006610065}
+  _spawner: {fileID: 2006610065}
 --- !u!114 &304761037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21741,7 +21740,7 @@ MonoBehaviour:
   _text: {fileID: 1451845064}
   _icon: {fileID: 2032387608}
   _prefab: {fileID: 9173929589832312030, guid: bd0c9d50088b792429fc2f80988a6de1, type: 3}
-  _unitSpawner: {fileID: 2006610065}
+  _spawner: {fileID: 2006610065}
 --- !u!114 &317547555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22505,7 +22504,7 @@ MonoBehaviour:
   _text: {fileID: 1000755856}
   _icon: {fileID: 128430569}
   _prefab: {fileID: 165470025180738680, guid: 5f6f1929bfe121245bd115526960d653, type: 3}
-  _unitSpawner: {fileID: 2006610065}
+  _spawner: {fileID: 2006610065}
 --- !u!114 &344321085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22978,7 +22977,7 @@ MonoBehaviour:
   _text: {fileID: 1095817486}
   _icon: {fileID: 420449690}
   _prefab: {fileID: -1690017235617127854, guid: 3136ae2662684c84c9c04b3d570255a7, type: 3}
-  _unitSpawner: {fileID: 2006610065}
+  _spawner: {fileID: 2006610065}
 --- !u!114 &368365542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23651,7 +23650,7 @@ MonoBehaviour:
   _text: {fileID: 331754873}
   _icon: {fileID: 1108298258}
   _prefab: {fileID: 8581573724368437433, guid: e1eae32bcb5e9ae4aa333395f0717bbd, type: 3}
-  _unitSpawner: {fileID: 2006610065}
+  _spawner: {fileID: 2006610065}
 --- !u!114 &390221288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25423,7 +25422,7 @@ MonoBehaviour:
   _text: {fileID: 738988496}
   _icon: {fileID: 1424722563}
   _prefab: {fileID: 1937788176774808481, guid: 6c33c418e3af4274894f6429e7aada92, type: 3}
-  _unitSpawner: {fileID: 2006610065}
+  _spawner: {fileID: 2006610065}
 --- !u!114 &487774347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26442,7 +26441,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5d6e42b338547477aa7a88708f894463, type: 3}
   - {fileID: 8300000, guid: 07f391589664f4e85904fa28802b4aa8, type: 3}
   _audio: {fileID: 519420033}
-  _isNeedPlay: 0
+  _needPlay: 0
 --- !u!114 &519420035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27008,8 +27007,7 @@ MonoBehaviour:
   _timeBetweenSpawnBubble: 36000
   _bubbleSpawnTimeViewer: {fileID: 1634837327}
   _maxBubbleCount: 3
-  _upgradeViewers:
-  - {fileID: 0}
+  _upgradeViewer: {fileID: 1342946347}
 --- !u!114 &543991292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27257,7 +27255,7 @@ MonoBehaviour:
   _text: {fileID: 49403442}
   _icon: {fileID: 376740998}
   _prefab: {fileID: -2414508260790378329, guid: 18beb5c2d58005c4792c4c4672d64473, type: 3}
-  _unitSpawner: {fileID: 2006610065}
+  _spawner: {fileID: 2006610065}
 --- !u!114 &560361163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27736,8 +27734,7 @@ MonoBehaviour:
   _timeBetweenSpawnBubble: 1500
   _bubbleSpawnTimeViewer: {fileID: 694366807}
   _maxBubbleCount: 6
-  _upgradeViewers:
-  - {fileID: 0}
+  _upgradeViewer: {fileID: 1017639564}
 --- !u!114 &566848810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28095,7 +28092,7 @@ MonoBehaviour:
   _text: {fileID: 705361130}
   _icon: {fileID: 1904882150}
   _prefab: {fileID: 6061409275312645788, guid: 81d93b6af4ebddf4294183a25513be51, type: 3}
-  _unitSpawner: {fileID: 2006610065}
+  _spawner: {fileID: 2006610065}
 --- !u!114 &574975873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29143,7 +29140,7 @@ MonoBehaviour:
   _text: {fileID: 19421584}
   _icon: {fileID: 874579400}
   _prefab: {fileID: 7947020226614436269, guid: f1ac2144a50dfca499cd430b78e3ea35, type: 3}
-  _unitSpawner: {fileID: 2006610065}
+  _spawner: {fileID: 2006610065}
 --- !u!114 &615957227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30680,7 +30677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _secondsCountText: {fileID: 1514546706}
-  _unitSpawner: {fileID: 2006610065}
+  _spawner: {fileID: 2006610065}
   _spawningArea: {fileID: 566848809}
 --- !u!114 &694366808
 MonoBehaviour:
@@ -38366,7 +38363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _secondsCountText: {fileID: 517679398}
-  _unitSpawner: {fileID: 2006610065}
+  _spawner: {fileID: 2006610065}
   _spawningArea: {fileID: 287860002}
 --- !u!114 &774815655
 MonoBehaviour:
@@ -40130,7 +40127,7 @@ MonoBehaviour:
   _text: {fileID: 1147923018}
   _icon: {fileID: 1532762568}
   _prefab: {fileID: 1670391551590985697, guid: 643a6032d1a0fa84297ea1340b19eb8b, type: 3}
-  _unitSpawner: {fileID: 2006610065}
+  _spawner: {fileID: 2006610065}
 --- !u!114 &840469375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41923,36 +41920,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 918951400}
   m_CullTransparentMesh: 1
---- !u!1 &925443594
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 925443595}
-  m_Layer: 0
-  m_Name: BubbleObjectPooler
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &925443595
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 925443594}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &933566278
 GameObject:
   m_ObjectHideFlags: 0
@@ -59912,7 +59879,7 @@ MonoBehaviour:
   _text: {fileID: 1900731476}
   _icon: {fileID: 1708198627}
   _prefab: {fileID: 2889539506511489773, guid: 0a937cf379808474b82cd518e8aae3b6, type: 3}
-  _unitSpawner: {fileID: 2006610065}
+  _spawner: {fileID: 2006610065}
 --- !u!114 &1081379615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60385,7 +60352,7 @@ MonoBehaviour:
   _text: {fileID: 245197566}
   _icon: {fileID: 454356193}
   _prefab: {fileID: 7182466648294209069, guid: 6f1784f2bff67934b97cd5d52a1a1c67, type: 3}
-  _unitSpawner: {fileID: 2006610065}
+  _spawner: {fileID: 2006610065}
 --- !u!114 &1094343237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67600,7 +67567,7 @@ MonoBehaviour:
   _text: {fileID: 1188725707}
   _icon: {fileID: 208621258}
   _prefab: {fileID: 1013701591414761297, guid: fa9e47c33216f894d996fe9357ca5561, type: 3}
-  _unitSpawner: {fileID: 2006610065}
+  _spawner: {fileID: 2006610065}
 --- !u!114 &1208340603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72963,7 +72930,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1871742555}
         m_TargetAssemblyTypeName: SellCrystalUnitViewer, Assembly-CSharp
-        m_MethodName: OnButtonClick
+        m_MethodName: OnBuyButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -73879,8 +73846,7 @@ MonoBehaviour:
   _timeBetweenSpawnBubble: 12
   _bubbleSpawnTimeViewer: {fileID: 2144397900}
   _maxBubbleCount: 12
-  _upgradeViewers:
-  - {fileID: 0}
+  _upgradeViewer: {fileID: 666696126}
 --- !u!114 &1265201782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74690,7 +74656,7 @@ MonoBehaviour:
   _text: {fileID: 1261901231}
   _icon: {fileID: 1765659974}
   _prefab: {fileID: 4007958836199723740, guid: 8fcbcb5d634b19b4ea0c7130e35cdbec, type: 3}
-  _unitSpawner: {fileID: 2006610065}
+  _spawner: {fileID: 2006610065}
 --- !u!114 &1342083550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75481,7 +75447,7 @@ MonoBehaviour:
   _text: {fileID: 721440399}
   _icon: {fileID: 952902196}
   _prefab: {fileID: 4749343892514763433, guid: 2de72693391b5f4499a7c02ba1843450, type: 3}
-  _unitSpawner: {fileID: 2006610065}
+  _spawner: {fileID: 2006610065}
 --- !u!114 &1360128081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75576,7 +75542,7 @@ MonoBehaviour:
   _text: {fileID: 1325281342}
   _icon: {fileID: 1836669248}
   _prefab: {fileID: 3877103572144387879, guid: 32f469b825c875f459ddaa286b143949, type: 3}
-  _unitSpawner: {fileID: 2006610065}
+  _spawner: {fileID: 2006610065}
 --- !u!114 &1368324576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80667,7 +80633,7 @@ MonoBehaviour:
   _text: {fileID: 270103705}
   _icon: {fileID: 1639896687}
   _prefab: {fileID: 6134973045877821524, guid: bdf7085e029e8d44e91231cd769d940d, type: 3}
-  _unitSpawner: {fileID: 2006610065}
+  _spawner: {fileID: 2006610065}
 --- !u!114 &1384005129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109700,7 +109666,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _secondsCountText: {fileID: 288198500}
-  _unitSpawner: {fileID: 2006610065}
+  _spawner: {fileID: 2006610065}
   _spawningArea: {fileID: 543991291}
 --- !u!114 &1634837328
 MonoBehaviour:
@@ -122241,7 +122207,7 @@ MonoBehaviour:
   _text: {fileID: 1214655961}
   _icon: {fileID: 723927823}
   _prefab: {fileID: -4785575349601666423, guid: bae77d6cf3462a14da3890be797bfa94, type: 3}
-  _unitSpawner: {fileID: 2006610065}
+  _spawner: {fileID: 2006610065}
 --- !u!114 &1773916501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124101,7 +124067,7 @@ MonoBehaviour:
   _text: {fileID: 1461396703}
   _icon: {fileID: 1398175160}
   _prefab: {fileID: -164773141444957351, guid: a9e56281170684c40993cb9e799819e9, type: 3}
-  _unitSpawner: {fileID: 2006610065}
+  _spawner: {fileID: 2006610065}
 --- !u!114 &1861637820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124198,7 +124164,7 @@ MonoBehaviour:
     \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u044B\u0445 \u0441\u0443\u0449\u0435\u0441\u0442\u0432"
   _price: 15
   _crystalCountViewer: {fileID: 941054263}
-  _unitSpawner: {fileID: 2006610065}
+  _spawner: {fileID: 2006610065}
   _areas:
   - {fileID: 1265201781}
   - {fileID: 566848809}
@@ -136934,7 +136900,7 @@ GameObject:
   - component: {fileID: 2006610066}
   - component: {fileID: 2006610065}
   m_Layer: 0
-  m_Name: UnitSpawner
+  m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -136949,36 +136915,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 2006610064}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7a90533755d5e84bbc157224d0ee986, type: 3}
+  m_Script: {fileID: 11500000, guid: be6428fd43c839b409146132f5db594c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _bubblePrefab: {fileID: 8788965725709063778, guid: 99f7ca3d66c280d4cbf012cf3518122a, type: 3}
   _prefabs:
-  - {fileID: -2414508260790378329, guid: 18beb5c2d58005c4792c4c4672d64473, type: 3}
-  - {fileID: -1935433269118617464, guid: fa958d22878121d4caf26cb3134f7286, type: 3}
-  - {fileID: 3220431140446414760, guid: 14bd9319e6c7dd8438389937c33e584b, type: 3}
-  - {fileID: 3647067975310210721, guid: ac9a7c8c07a7b2b4ab5e887782b97d62, type: 3}
   - {fileID: -1690017235617127854, guid: 3136ae2662684c84c9c04b3d570255a7, type: 3}
+  - {fileID: -2414508260790378329, guid: 18beb5c2d58005c4792c4c4672d64473, type: 3}
+  - {fileID: 8581573724368437433, guid: e1eae32bcb5e9ae4aa333395f0717bbd, type: 3}
+  - {fileID: 1013701591414761297, guid: fa9e47c33216f894d996fe9357ca5561, type: 3}
+  - {fileID: 4749343892514763433, guid: 2de72693391b5f4499a7c02ba1843450, type: 3}
   - {fileID: 1937788176774808481, guid: 6c33c418e3af4274894f6429e7aada92, type: 3}
   - {fileID: 9173929589832312030, guid: bd0c9d50088b792429fc2f80988a6de1, type: 3}
-  - {fileID: 3877103572144387879, guid: 32f469b825c875f459ddaa286b143949, type: 3}
-  - {fileID: 7947020226614436269, guid: f1ac2144a50dfca499cd430b78e3ea35, type: 3}
   - {fileID: 7182466648294209069, guid: 6f1784f2bff67934b97cd5d52a1a1c67, type: 3}
-  - {fileID: 8581573724368437433, guid: e1eae32bcb5e9ae4aa333395f0717bbd, type: 3}
-  - {fileID: 165470025180738680, guid: 5f6f1929bfe121245bd115526960d653, type: 3}
-  - {fileID: 4007958836199723740, guid: 8fcbcb5d634b19b4ea0c7130e35cdbec, type: 3}
   - {fileID: -164773141444957351, guid: a9e56281170684c40993cb9e799819e9, type: 3}
+  - {fileID: 7947020226614436269, guid: f1ac2144a50dfca499cd430b78e3ea35, type: 3}
+  - {fileID: 4007958836199723740, guid: 8fcbcb5d634b19b4ea0c7130e35cdbec, type: 3}
   - {fileID: -4785575349601666423, guid: bae77d6cf3462a14da3890be797bfa94, type: 3}
+  - {fileID: -1935433269118617464, guid: fa958d22878121d4caf26cb3134f7286, type: 3}
+  - {fileID: 165470025180738680, guid: 5f6f1929bfe121245bd115526960d653, type: 3}
+  - {fileID: 3877103572144387879, guid: 32f469b825c875f459ddaa286b143949, type: 3}
+  - {fileID: 3647067975310210721, guid: ac9a7c8c07a7b2b4ab5e887782b97d62, type: 3}
   - {fileID: 6061409275312645788, guid: 81d93b6af4ebddf4294183a25513be51, type: 3}
   - {fileID: 6134973045877821524, guid: bdf7085e029e8d44e91231cd769d940d, type: 3}
   - {fileID: 2889539506511489773, guid: 0a937cf379808474b82cd518e8aae3b6, type: 3}
-  - {fileID: 4749343892514763433, guid: 2de72693391b5f4499a7c02ba1843450, type: 3}
-  - {fileID: 1013701591414761297, guid: fa9e47c33216f894d996fe9357ca5561, type: 3}
+  - {fileID: 1670391551590985697, guid: 643a6032d1a0fa84297ea1340b19eb8b, type: 3}
+  - {fileID: 7994153725719467772, guid: 99f7ca3d66c280d4cbf012cf3518122a, type: 3}
+  - {fileID: -5037374917979755768, guid: 30fdb9bb75642aa47b2a653f5ab549bf, type: 3}
+  - {fileID: 3683777583171450753, guid: df6e5b63b5edb4641a68806df8000e3c, type: 3}
+  - {fileID: 8666516708443603260, guid: ff027f1b12c894a4f94dbb268cd65ba7, type: 3}
   _dnaPrefab: {fileID: -1690017235617127854, guid: 3136ae2662684c84c9c04b3d570255a7, type: 3}
   _unitVierwersContainer: {fileID: 966276392}
-  _maxBubbleCount: 10
+  _maxBubbleCount: 12
   _xBordersArea: {x: -1.5, y: 1.5}
-  _yBorders: {x: -2.8, y: 3.5}
+  _yBorders: {x: 3, y: -4}
   _areaButtons:
   - {fileID: 735635664}
   - {fileID: 1954955784}
@@ -137007,10 +136977,10 @@ MonoBehaviour:
   - {fileID: 2046984181}
   - {fileID: 242687383}
   _areas:
-  - {fileID: 1265201781}
-  - {fileID: 566848809}
-  - {fileID: 543991291}
-  - {fileID: 287860002}
+  - {fileID: 1265201780}
+  - {fileID: 566848808}
+  - {fileID: 543991290}
+  - {fileID: 287860001}
   _scriptableUnits:
   - {fileID: 11400000, guid: 3c030eb277c670f4ab78b3859e342bdc, type: 2}
   - {fileID: 11400000, guid: d0f0cba67b66e6642a75d0fe46d1c60a, type: 2}
@@ -137033,7 +137003,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c975b26a20578c44dbdcbf34e515996d, type: 2}
   - {fileID: 11400000, guid: ef23f573e1de51e4186b98b2ba278780, type: 2}
   _unitsPooler: {fileID: 468520336}
-  _bubblesPooler: {fileID: 925443594}
   _unitShop: {fileID: 588631089}
 --- !u!4 &2006610066
 Transform:
@@ -148805,7 +148774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _secondsCountText: {fileID: 310507485}
-  _unitSpawner: {fileID: 2006610065}
+  _spawner: {fileID: 2006610065}
   _spawningArea: {fileID: 1265201781}
 --- !u!114 &2144397901
 MonoBehaviour:

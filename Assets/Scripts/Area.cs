@@ -14,7 +14,7 @@ public class Area : MonoBehaviour
     [SerializeField] private int _timeBetweenSpawnBubble;
     [SerializeField] private BubbleSpawnTimeViewer _bubbleSpawnTimeViewer;
     [SerializeField] private int _maxBubbleCount;
-    [SerializeField] private List<UpgradeViewer> _upgradeViewers;
+    [SerializeField] private UpgradeViewer _upgradeViewer;
 
     private List<GameObject> _bubbles = new List<GameObject>();
     private int _minimumTimeBeforeSpawn;
@@ -37,13 +37,7 @@ public class Area : MonoBehaviour
     {
         Active?.Invoke(_bubblePrefab, _timeBetweenSpawnBubble);
         _minimumTimeBeforeSpawn = _timeBetweenSpawnBubble / _minimumTimeBetweenSpawnCoefficient;
-        foreach (var upgradeViewer in _upgradeViewers)
-        {
-            if (upgradeViewer.gameObject.activeSelf == false)
-            {
-                upgradeViewer.gameObject.SetActive(true);
-            }
-        }
+        _upgradeViewer.gameObject.SetActive(true);
     }
 
     public void ChangeTimeBetweenSpawn()

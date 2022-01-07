@@ -60,7 +60,7 @@ public class BubbleSpawnTimeViewer : MonoBehaviour
         }
     }
 
-    public void InitializeBubble(Unit unit)
+    private void InitializeBubble(Unit unit)
     {
         if (_spawningArea.BubblesCount <= _spawningArea.MaxBubbleCount)
         {
